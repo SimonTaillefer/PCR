@@ -1,3 +1,52 @@
+/* Définition police */
+@font-face
+{
+    font-family: 'BebasNeue';
+    src: url('BebasNeue.otf');
+}
+
+/* Titre */
+#titre
+{
+	font-family: 'BebasNeue', Arial, serif;
+	font-weight: bold;
+	color: #e6e6e6;
+	margin-left: 10%;
+}
+
+/* Logos */
+#logo
+{
+	width: 15%;
+	vertical-align: middle;
+	margin-left: 20%;
+}
+
+/* /Header */
+/* Barre de navigation */
+.container-fluid
+{
+	background-color: #31a8e8;
+	color: #ffffff;
+}
+
+.container
+{
+	margin-top: -3%;
+	background-color: #9dc4f0;
+}
+
+.navbar
+{
+	opacity: 0.9;
+	z-index: 1;
+}
+
+.dropdown:hover .dropdown-menu
+{
+	display: block;
+}
+
 footer {
 
 	background-color: #57B9ED;
