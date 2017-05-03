@@ -16,7 +16,7 @@
 
     <div id="apercu">
         <h2>
-          <center> Inscription Abonnee </center>
+          <center> Inscription </center>
         </h2>
 
          
