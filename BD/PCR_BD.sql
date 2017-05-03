@@ -88,10 +88,9 @@ CREATE TABLE Commentaires (
 	codePubCh varchar(255),
 	loginCh varchar(255),
 	codePubAbo varchar(255),
-	loginAbo varchar(255)
+	loginAbo varchar(255),
 	CONSTRAINT FK_Com_Pub_Ch FOREIGN KEY (codePubCh) REFERENCES Publications (codePub),
 	CONSTRAINT FK_com_Ch FOREIGN KEY (loginCh) REFERENCES Chercheurs (loginCh),
 	CONSTRAINT FK_Com_Pub_Abo FOREIGN KEY (codePubAbo) REFERENCES Publications(codePub),
 	CONSTRAINT FK_Com_Abo FOREIGN KEY (loginAbo) REFERENCES Abonnes (loginAbo)
->>>>>>> Stashed changes
 );

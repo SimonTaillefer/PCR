@@ -21,11 +21,11 @@
 
          
         <form action="" methode="post">
-          <label>Nom d'utilisateur (obligatoire)</label><br>
+          <label>Nom d'utilisateur </label><br>
           <input type="text" name="username">
           <br>
           <br>
-          <label>Mot de passe (obligatoire) </label><br>
+          <label>Mot de passe </label><br>
           <input type="password" name="motdepasse">
           <br>
           <a href="NouveauMotdePasse.php">mot de passe oublié </a>

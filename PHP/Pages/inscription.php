@@ -21,6 +21,13 @@
 
          
         <form action="" methode="post">
+          <label>Vous êtes un ? </label><br>
+          <select>
+            <option value=chercheur>Chercheur</option>
+            <option value=abonne>Abonné</option>
+          </select>
+          <br>
+          <br>
           <label>Nom </label><br>
           <input type="text" name="nom">
           <br>
@@ -31,6 +38,10 @@
           <br>
           <label>Email </label><br>
           <input type="text" name="email">
+          <br>
+          <br>
+          <label>Telephone </label><br>
+          <input type="number" name="tel">
           <br>
           <br>
           <label>Mot de passe</label><br>
