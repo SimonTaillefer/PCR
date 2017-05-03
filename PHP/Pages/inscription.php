@@ -16,16 +16,28 @@
 
     <div id="apercu">
         <h2>
-          <center> Compte utilisateur</center>
+          <center> Inscription Abonnee </center>
         </h2>
 
          
         <form action="" methode="post">
-          <label>Nom d'utilisateur ou adresse electronique. (obligatoire)</label><br>
-          <input type="text" name="username">
+          <label>Nom </label><br>
+          <input type="text" name="nom">
           <br>
           <br>
-          <input type="submit" value="Envoyer nouveau mot de passe" name="connexion">
+          <label>Prenom </label><br>
+          <input type="text" name="prenom">
+          <br>
+          <br>
+          <label>Email </label><br>
+          <input type="text" name="email">
+          <br>
+          <br>
+          <label>Mot de passe</label><br>
+          <input type="password" name="motdepasse">
+          <br>
+          <br>
+          <input type="submit" value="valider" name="creercompte">
         </form>
  
        <?php include('../Includes/footer.php'); ?>
