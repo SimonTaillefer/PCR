@@ -48,16 +48,12 @@
 }
 
 footer {
-
-	background-color: #57B9ED;
-    padding-left: 40px;
-    padding-right: 40px;
+	background-color: #31a8e8;
+	margin-top: 15px;
 }
 
-#apercu {
-    
-    width: 85%;
-    margin: auto;
-    margin-top: 15px;
-    
+#apercu { 
+   width:91%;
+    margin-right: auto;
+    margin-left: auto;    
 }

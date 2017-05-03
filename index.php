@@ -8,10 +8,15 @@
 
   <body>
     <div class="container">
-	  <?php include('PHP/Includes/header.html'); ?>
+	    <?php include('PHP/Includes/header.html'); ?>
       <!-- Static navbar -->
       <?php include('PHP/Includes/nav.html'); ?>
     </div> <!-- /container -->
     <?php include('PHP/Includes/js.php'); ?>
+
+    <div id="apercu">
+       <?php include('PHP/Includes/footer.php'); ?>
+    </div>
+
   </body>
 </html>
