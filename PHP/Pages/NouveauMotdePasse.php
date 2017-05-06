@@ -20,7 +20,7 @@
         </h2>
 
          
-        <form action="" methode="post">
+        <form action="" method="post">
           <label>Nom d'utilisateur ou adresse electronique. (obligatoire)</label><br>
           <input type="text" name="username">
           <br>

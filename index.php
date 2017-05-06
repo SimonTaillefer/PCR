@@ -11,12 +11,13 @@
 	    <?php include('PHP/Includes/header.html'); ?>
       <!-- Static navbar -->
       <?php include('PHP/Includes/nav.html'); ?>
+      <div id="contenu">
+        
+      </div>
+      <?php include('PHP/Includes/footer.php'); ?>
     </div> <!-- /container -->
+
     <?php include('PHP/Includes/js.php'); ?>
-
-    <div id="apercu">
-       <?php include('PHP/Includes/footer.php'); ?>
-    </div>
-
+    
   </body>
 </html>

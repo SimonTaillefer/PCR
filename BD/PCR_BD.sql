@@ -7,6 +7,7 @@ CREATE TABLE Abonnes (
 	nomAbo varchar(255),
 	prenomAbo varchar(255),
 	mailAbo varchar(255),
+	telAbo numeric,
 	actifAbo boolean,
 	CONSTRAINT PK_Abo PRIMARY KEY (loginAbo)
 );
@@ -36,6 +37,7 @@ CREATE TABLE Chercheurs (
 	prenomCh varchar(255),
 	mailCh varchar(255),
 	telCh numeric,
+	actifch boolean,
 	CONSTRAINT PK_Ch PRIMARY KEY (loginCh)
 );
 

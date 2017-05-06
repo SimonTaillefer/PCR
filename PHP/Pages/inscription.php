@@ -2,27 +2,24 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-	  <link href="../../Styles/style.css" rel="stylesheet">
-	  <?php include('../Includes/head.php'); ?>
+    <link href="../../Styles/style.css" rel="stylesheet">
+    <?php include('../Includes/head.php'); ?>
   </head>
 
   <body>
     <div class="container">
-	    <?php include('../Includes/header.html'); ?>
+      <?php include('../Includes/header.html'); ?>
       <!-- Static navbar -->
       <?php include('../Includes/nav.html'); ?>
-    </div> <!-- /container -->
-    <?php include('../Includes/js.php'); ?>
-
-    <div id="apercu">
+      <div id="contenu">
         <h2>
           <center> Inscription </center>
         </h2>
 
          
-        <form action="" methode="post">
+        <form action="traitement.php" method="post">
           <label>Vous êtes un ? </label><br>
-          <select>
+          <select name="utilisateur">
             <option value=chercheur>Chercheur</option>
             <option value=abonne>Abonné</option>
           </select>
@@ -51,8 +48,13 @@
           <input type="submit" value="valider" name="creercompte">
         </form>
  
-       <?php include('../Includes/footer.php'); ?>
-    </div>
+      </div>
+      <?php include('../Includes/footer.php'); ?>
+    </div> <!-- /container -->
 
+    <?php include('../Includes/js.php'); ?>
+    
   </body>
 </html>
+
+

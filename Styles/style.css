@@ -47,12 +47,21 @@
 	display: block;
 }
 
-footer {
-	background-color: #31a8e8;
-	margin-top: 15px;
+#contenu
+{
+	background: #ffffff;
+	min-height: 300px;
+	padding-bottom: 15px;
 }
 
-#apercu { 
+footer 
+{
+	background-color: #31a8e8;
+	width: 100%;
+}
+
+#apercu 
+{ 
    width:91%;
    margin-right: auto;
    margin-left: auto;    
