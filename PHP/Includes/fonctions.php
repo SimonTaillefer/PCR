@@ -124,4 +124,14 @@
         }
     }
 
+    function annuaire ()
+    {
+        require_once("../Modules/connect.inc.php");
+
+        $requete = 'SELECT * FROM CHERCHEURS WHERE actifch = true';
+        $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+        pg_close($dbconn);
+
+    }
+
 ?>
