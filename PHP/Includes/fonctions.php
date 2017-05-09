@@ -5,9 +5,7 @@
         //si l'utilisateur est un chercheur
         if ((substr($login, 0, 2))==='ch')
         {
-            $dbconn = pg_pconnect("dbname=pcr_bd user=postgres password=root")
-            or die('Connexion impossible : ' . pg_last_error());
-
+            require_once("../Modules/connect.inc.php");
             $password=md5($password);
 
             $requete="SELECT prenomch,nomch FROM chercheurs WHERE loginch='".$login."' and passch='".$password."' ";
@@ -28,8 +26,7 @@
         //si l'utilisateur est un abonné
         elseif ((substr($login, 0, 2))==="ab")
         {
-            $dbconn = pg_pconnect("dbname=pcr_bd user=postgres password=root")
-            or die('Connexion impossible : ' . pg_last_error());
+            require_once("../Modules/connect.inc.php");
 
             $password=md5($password);
 
@@ -59,8 +56,7 @@
 	function inscription_chercheurs ($nom,$prenom,$mail,$tel,$password,$actif)
 	{
 		//connexion et selection de la base de donnees
-		$dbconn = pg_pconnect("dbname=pcr_bd user=postgres password=root")
-    	or die('Connexion impossible : ' . pg_last_error());
+		require_once("../Modules/connect.inc.php");
 
     	$requete='SELECT * FROM chercheurs';
     	$result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
@@ -81,8 +77,7 @@
     function inscription_abonnes($nom,$prenom,$mail,$password,$actif)
     {
 		//connexion et selection de la base de donnees
-		$dbconn = pg_pconnect("dbname=pcr_bd user=postgres password=root")
-    	or die('Connexion impossible : ' . pg_last_error());
+		require_once("../Modules/connect.inc.php");
 
     	$requete='SELECT * FROM abonnes';
     	$result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
@@ -104,8 +99,7 @@
     {
         if ((substr($login, 0, 2))==='ch')
         {
-            $dbconn = pg_pconnect("dbname=pcr_bd user=postgres password=root")
-            or die('Connexion impossible : ' . pg_last_error());
+            require_once("../Modules/connect.inc.php");
 
             $password=md5($password);
 
@@ -116,8 +110,7 @@
         elseif ((substr($login, 0, 2))==="ab")
         {
 
-            $dbconn = pg_pconnect("dbname=pcr_bd user=postgres password=root")
-            or die('Connexion impossible : ' . pg_last_error());
+            require_once("../Modules/connect.inc.php");
 
             $password=md5($password);
 

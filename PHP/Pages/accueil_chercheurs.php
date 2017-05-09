@@ -14,7 +14,7 @@
 
       <div id="contenu">
         <h2>
-          <center> acceuil chercheur</center>
+          <center> accueil chercheur</center>
         </h2>
 
       </div>

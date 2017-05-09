@@ -14,7 +14,7 @@
 
       <div id="contenu">
         <h2>
-          <center> acceuil abonne</center>
+          <center> accueil abonne</center>
         </h2>
 
       </div>
