@@ -105,6 +105,7 @@
 
             $requete="UPDATE chercheurs SET passch = '".$password."' WHERE loginch='".$login."'";
             $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+            header("location: connexion.php");
             pg_close($dbconn);
         }
         elseif ((substr($login, 0, 2))==="ab")
@@ -116,11 +117,12 @@
 
             $requete="UPDATE abonnes SET passabo = '".$password."' WHERE loginabo='".$login."'";
             $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+            header("location: connexion.php");
             pg_close($dbconn);
         }
         else
         {
-            echo "Nom d'utilisateur incorrect";
+            header("location: NouveauMotdePasse.php");
         }
     }
 

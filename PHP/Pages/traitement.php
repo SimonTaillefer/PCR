@@ -21,7 +21,7 @@
 	}
 	elseif (isset($_POST["nouveau_mot_de_passe"])) 
 	{
-		nouveau_motdePasse ($_POST["username"],$_POST["motdepasse"]);
+		nouveau_motdePasse ($_POST["username"],$_POST["pwd"]);
 	}
 	
 ?>
