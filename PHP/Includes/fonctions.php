@@ -128,24 +128,29 @@
     {
         require_once("../Modules/connect.inc.php");
 
-        $requete = 'SELECT nomCh, prenomCh, mailCh, telCh FROM CHERCHEURS WHERE actifCh = true';
+        $requete = "SELECT nomCh, prenomCh, mailch, telch FROM CHERCHEURS WHERE actifCh = 'true'";
         $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
-        pg_close($dbconn);
-        print "<table>\n"; $num=pg_numrows($result);
-        echo "\t<tr>\n";
+        echo  "<table>"; 
+        echo "<tr>";
             echo "<td>Nom</td>";
             echo "<td>Prenom</td>";
             echo "<td>Mail</td>";
             echo "<td>Telephone</td>";
-            echo "\t</tr>\n";
-        /*for ($i=0; $i<$num; $i++)
+        echo "</tr>";
+        
+        $num=pg_numrows($result);
+        for ($i=0; $i<$num; $i++)
         {
             $row=pg_fetch_array($result);
-            echo "\t<tr>\n";
-            echo "<td>".$row["nom"]."</td>"; echo "<td>".$row["prenom"]."</td>";
-            echo "\t</tr>\n";
-        }*/
-        echo "</table>\n"; pg_close($connect); ?>
+            echo "<tr>";
+                echo "<td>".$row["nomch"]."</td>"; 
+                echo "<td>".$row["prenomch"]."</td>";
+                echo "<td>".$row["mailch"]."</td>"; 
+                echo "<td>".$row["telch"]."</td>";
+            echo "</tr>";
+        }
+        echo "</table>"; 
+        pg_close($dbconn); 
     }
 
 ?>

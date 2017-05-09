@@ -19,8 +19,9 @@
 			$_SESSION["login"]=inscription_abonnes ($_POST["nom"],$_POST["prenom"],$_POST["email"],$_POST["motdepasse"],"FALSE");
 		}
 	}
-	elseif (isset($_POST[""])) 
+	elseif (isset($_POST["nouveau_mot_de_passe"])) 
 	{
 		nouveau_motdePasse ($_POST["username"],$_POST["motdepasse"]);
 	}
+	
 ?>

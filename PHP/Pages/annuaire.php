@@ -2,23 +2,24 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-	  <link href="Styles/style.css" rel="stylesheet">
-	  <?php include('PHP/Includes/head.php'); ?>
+    <link href="../../Styles/style.css" rel="stylesheet">
+    <?php include('../Includes/head.php'); ?>
   </head>
 
   <body>
     <div class="container">
-	    <?php include('PHP/Includes/header.html'); ?>
+      <?php include('../Includes/header.html'); ?>
       <!-- Static navbar -->
-      <?php include('PHP/Includes/nav.html'); ?>
+      <?php include('../Includes/nav.html'); ?>
       <div id="contenu">
-        include '../Includes/fonctions.php';
+        <?php include '../Includes/fonctions.php';
         annuaire();
+        ?>
       </div>
-      <?php include('PHP/Includes/footer.php'); ?>
+      <?php include('../Includes/footer.php'); ?>
     </div> <!-- /container -->
 
-    <?php include('PHP/Includes/js.php'); ?>
+    <?php include('../Includes/js.php'); ?>
     
   </body>
 </html>

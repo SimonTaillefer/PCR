@@ -25,7 +25,7 @@
           <input type="text" name="username">
           <br>
           <br>
-          <input type="submit" value="Envoyer nouveau mot de passe" name="connexion">
+          <input type="submit" value="Envoyer nouveau mot de passe" name="nouveau_mot_de_passe">
         </form>
  
        <?php include('../Includes/footer.php'); ?>
