@@ -128,7 +128,7 @@
     {
         require_once("../Modules/connect.inc.php");
 
-        $requete = 'SELECT * FROM CHERCHEURS WHERE actifch = true';
+        $requete = 'SELECT nomCh, prenomCh, mailCh, telCh FROM CHERCHEURS WHERE actifCh = true';
         $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
         pg_close($dbconn);
 
