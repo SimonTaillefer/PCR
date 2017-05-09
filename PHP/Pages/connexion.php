@@ -10,7 +10,7 @@
     <div class="container">
       <?php include('../Includes/header.html'); ?>
       <!-- Static navbar -->
-      <?php include('../Includes/nav.html'); ?>
+      <?php include('../Includes/nav.php'); ?>
       <div id="contenu">
         <h2>
           <center> Compte utilisateur</center>
@@ -30,6 +30,12 @@
           <br>
           <input type="submit" value="Se Connecter" name="connexion">
         </form>
+
+        <?php 
+          if (isset($_GET['msgErreur'])) {
+            echo '<p>' . $_GET['msgErreur'] . '</p>';
+          }
+          ?>
 
       </div>
       <?php include('../Includes/footer.php'); ?>

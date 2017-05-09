@@ -1,5 +1,5 @@
 <?php
-	
+
 	function connexion ($login,$password)
     {
         //si l'utilisateur est un chercheur
@@ -14,11 +14,12 @@
             //si identifiant correct redirection vers la page d'accueil des chercheurs
             if ((pg_num_rows($result))==1)
             {
+                $_SESSION['login'] = $login;
                 header("location: accueil_chercheurs.php");
             }
             else
             {
-                header("location: ");
+                header("location: connexion.php?msgErreur=Erreur : mauvais login ou mot de passe");
             }
             
             pg_close($dbconn);
@@ -40,7 +41,7 @@
             }
             else
             {
-                header("location: ");
+                header("location: connexion.php?msgErreur=Erreur : mauvais login ou mot de passe");
             }
             
             pg_close($dbconn);
@@ -48,7 +49,7 @@
         //identifiants incorrects
         else
         {
-            echo "Nom d'utilisateur incorrect";
+            header("location: connexion.php?msgErreur=Erreur : mauvais login ou mot de passe");
         }
     }
 
@@ -154,5 +155,4 @@
         echo "</table>"; 
         pg_close($dbconn); 
     }
-
 ?>

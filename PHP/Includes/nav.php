@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <nav class="navbar navbar-default">
 	<div class="container-fluid">
 	  <div class="navbar-header">
@@ -28,7 +29,12 @@
 			<a href="#"><span class="glyphicon glyphicon-pencil"></span> Publications</a>
 		  </li>
 		  <li>
-			<a href="/PCR/PHP/Pages/connexion.php"><span class="glyphicon glyphicon-log-in"></span> Connexion</a>
+		  <?php 
+		  	if (!isset($_SESSION["login"]))
+		  		echo '<a href="/PCR/PHP/Pages/connexion.php"><span class="glyphicon glyphicon-log-in"></span> Connexion</a>';
+		  	else
+		  		echo '<a href="/PCR/PHP/Pages/deconnexion.php"><span class="glyphicon glyphicon-log-out"></span> Deconnexion</a>';
+		  ?>
 		  </li>
 		  <li>
 			<a href="/PCR/PHP/Pages/inscription.php"><span class="glyphicon glyphicon-plus"></span> Inscription</a>

@@ -10,7 +10,7 @@
     <div class="container">
       <?php include('../Includes/header.html'); ?>
       <!-- Static navbar -->
-      <?php include('../Includes/nav1.html'); ?>
+      <?php include('../Includes/nav.php'); ?>
 
       <div id="contenu">
         <h2>
