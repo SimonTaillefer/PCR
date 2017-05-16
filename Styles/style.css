@@ -60,13 +60,40 @@ footer
 	width: 100%;
 }
 
-#apercu 
+/*#apercu 
 { 
    width:91%;
    margin-right: auto;
    margin-left: auto;    
 }
+*/
 
-table td {
+table
+{
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+	width: 70%;
+}
+
+th {
+    background-color: #31a8e8;
+    color: white;
+    border: 1px solid black;
+}
+
+tr:nth-child(even)
+{
+	background-color: #f2f2f2;
+}
+
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+
+table td 
+{
 	border: 1px solid black;
 }
+

@@ -12,16 +12,25 @@
 	  </div>
 	  <div id="navbar" class="navbar-collapse collapse">
 		<ul class="nav navbar-nav">
+		<?php 
+		  	if (!isset($_SESSION["login"]))
+		  	{
 
-		  <li class="dropdown">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">L'IUT <span class="caret"></span></a>
-			<ul class="dropdown-menu">
-			  <li><a href="departements.php">Départements</a></li>
-			  <li><a href="#">Règlements</a></li>
-			  <li><a href="#">Relation entreprise</a></li>
-			  <li><a href="#">Mot du directeur</a></li>
-			</ul>
-		  </li>
+		  	}
+		  	else
+		  	{
+		  		echo '<li class="dropdown">';
+				echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projets <span class="caret"></span></a>';
+				echo '<ul class="dropdown-menu">';
+			    echo '<li><a href="departements.php">Creer Projets</a></li>';
+			  	echo '<li><a href="/PCR/PHP/Pages/mesProjets.php">Voir mes Projets</a></li>';
+			  //<li><a href="#">Relation entreprise</a></li>
+			  //<li><a href="#">Mot du directeur</a></li>
+			echo "</ul>";
+		  echo "</li>";
+		  
+		  	}
+		  ?>
 		  <li>
 			<a href="/PCR/PHP/Pages/annuaire.php"><span class="glyphicon glyphicon-list-alt"></span> Annuaire</a>
 		  </li>
@@ -36,9 +45,20 @@
 		  		echo '<a href="/PCR/PHP/Pages/deconnexion.php"><span class="glyphicon glyphicon-log-out"></span> Deconnexion</a>';
 		  ?>
 		  </li>
-		  <li>
-			<a href="/PCR/PHP/Pages/inscription.php"><span class="glyphicon glyphicon-plus"></span> Inscription</a>
-		  </li>
+		  <?php 
+		  	if (!isset($_SESSION["login"]))
+		  	{
+		  		echo "<li>";
+				echo '<a href="/PCR/PHP/Pages/inscription.php"><span class="glyphicon glyphicon-plus"></span> Inscription</a>';
+		  		echo "</li>";
+		  	}
+		  	else
+		  	{
+		  		echo "<li>";
+				echo '<a href="/PCR/PHP/Pages/monProfil.php"><span class="glyphicon glyphicon-plus"></span> Mon Profil</a>';
+		  		echo "</li>";
+		  	}
+		  ?>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<li>
