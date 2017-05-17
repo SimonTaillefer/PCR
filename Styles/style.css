@@ -97,3 +97,8 @@ table td
 	border: 1px solid black;
 }
 
+#img_accueil
+{
+	max-width: 50%;
+}
+
