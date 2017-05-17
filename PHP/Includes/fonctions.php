@@ -155,4 +155,10 @@
         echo "</table>"; 
         pg_close($dbconn); 
     }
+
+    function recherche() {
+
+        require_once("../Modules/connect.inc.php");
+        
+    }
 ?>
