@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="utf-8">
@@ -10,7 +10,7 @@
     <div class="container">
       <?php include('../Includes/header.html'); ?>
       <!-- Static navbar -->
-      <?php include('../Includes/nav.html'); ?>
+      <?php include('../Includes/nav.php'); ?>
       <div id="contenu">
         <h2>
           <center> Inscription </center>

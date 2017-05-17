@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -14,13 +13,10 @@
       <?php include('../Includes/nav.php'); ?>
 
       <div id="contenu">
-        <h2>
-          <center>  Accueil chercheur</center>
-        </h2>
-
-         
-        
-      </div>
+        <?php include '../Includes/fonctions.php';
+          voirMesProjets ($_SESSION["login"]);
+        ?>
+       </div>
       <?php include('../Includes/footer.php'); ?>
     </div> <!-- /container -->
 

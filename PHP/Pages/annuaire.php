@@ -10,12 +10,14 @@
     <div class="container">
       <?php include('../Includes/header.html'); ?>
       <!-- Static navbar -->
-      <?php include('../Includes/nav.html'); ?>
+      <?php include('../Includes/nav.php'); ?>
+
       <div id="contenu">
         <?php include '../Includes/fonctions.php';
+        echo "<br><center><h3>  Annuaire du PCR  </h3></center><br>";
         annuaire();
         ?>
-      </div>
+       </div>
       <?php include('../Includes/footer.php'); ?>
     </div> <!-- /container -->
 
@@ -23,3 +25,4 @@
     
   </body>
 </html>
+

@@ -15,10 +15,12 @@
 
       <div id="contenu">
         <h2>
-          <center>  Accueil chercheur</center>
+          <center> Mon Profil</center>
         </h2>
 
-         
+         <?php include '../Includes/fonctions.php';
+            monProfil($_SESSION["login"]);
+         ?>
         
       </div>
       <?php include('../Includes/footer.php'); ?>

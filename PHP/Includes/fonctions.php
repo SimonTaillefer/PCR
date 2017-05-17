@@ -135,10 +135,10 @@
         $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
         echo  "<table>"; 
         echo "<tr>";
-            echo "<td>Nom</td>";
-            echo "<td>Prenom</td>";
-            echo "<td>Mail</td>";
-            echo "<td>Telephone</td>";
+            echo "<th>Nom</th>";
+            echo "<th>Prenom</th>";
+            echo "<th>Mail</th>";
+            echo "<th>Telephone</th>";
         echo "</tr>";
         
         $num=pg_numrows($result);
@@ -146,8 +146,8 @@
         {
             $row=pg_fetch_array($result);
             echo "<tr>";
-                echo "<td>".$row["nomch"]."</td>"; 
-                echo "<td>".$row["prenomch"]."</td>";
+                echo "<td>".strtoupper($row["nomch"])."</td>"; 
+                echo "<td>".ucfirst($row["prenomch"])."</td>";
                 echo "<td>".$row["mailch"]."</td>"; 
                 echo "<td>".$row["telch"]."</td>";
             echo "</tr>";
@@ -156,9 +156,93 @@
         pg_close($dbconn); 
     }
 
-    function recherche() {
+    function recherche() 
+    {
 
         require_once("../Modules/connect.inc.php");
+    }
+
+    function monProfil($login)
+    {
+        require_once("../Modules/connect.inc.php");
+
+        $requete = "SELECT nomCh, prenomCh, mailch, telch FROM CHERCHEURS WHERE loginch = '".$login."'";
+        $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+        $row=pg_fetch_array($result);
+        echo "<center>";
+        echo "<br><br>";
+        echo "<h4>".$row["nomch"]." ".$row["prenomch"]."</h4>";
+        echo "Coordonnes<br>";
+        echo "Email : ".$row["mailch"];
+        echo "<br>Téléphone : ".$row["telch"];
+       
+        $requete = "SELECT nomEq FROM EquipeProjets e,Appartenir a WHERE a.loginch='".$login."' and a.codeEq=e.codeEq";
+        $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+        $num=pg_numrows($result);
+        echo "<br>Equipes : ";
+        for ($i=0; $i<$num; $i++)
+        {
+             $row=pg_fetch_array($result);
+             echo $row["nomeq"].", ";
+        }
+         echo "</center>";
+    }
+
+
+
+    function creerEquipe($nom)
+    {
+        require_once("../Modules/connect.inc.php");
+
+        $requete='SELECT * FROM EquipeProjets';
+        $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+        $num=pg_num_rows($result);
+        $num=$num+1;
+
+        $requete2="INSERT INTO EquipeProjets VALUES('".$num."','".$nom."')";
+        pg_exec($dbconn,$requete2) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+
+        pg_close($dbconn);
+
+    }
+
+
+    function ajoutMembreEquipe()
+    {
+
+    }
+
+    function creerProjet($login,$titre,$theme,$budget,$date,$description,$codeEq)
+    {
+        require_once("../Modules/connect.inc.php");
+
+        $requete='SELECT * FROM projets';
+        $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+        $num=pg_num_rows($result);
+        $num=$num+1;
         
+        $codeprojet='prprc'.$num;
+        $requete2="INSERT INTO projets VALUES('".$codeprojet."','".$titre."','".$theme."','".$budget."','".$date."','".$description."','".$login."')";
+        pg_exec($dbconn,$requete2) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+
+        pg_close($dbconn);
+    }
+
+
+    function voirMesProjets ($login)
+    {
+        require_once("../Modules/connect.inc.php");
+
+        $requete="SELECT titreProjet FROM projets p, Appartenir a WHERE a.loginch='".$login."' and  a.codeEq=p.codeEq ";
+        $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+
+        $num=pg_numrows($result);
+        echo "<br>Mes projets : ";
+        for ($i=0; $i<$num; $i++)
+        {
+             $row=pg_fetch_array($result);
+             echo $row["titreProjet"].", ";
+        }
+        pg_close($dbconn);
     }
 ?>
