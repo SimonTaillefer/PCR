@@ -1,3 +1,4 @@
+<?php require_once('PHP/Modules/session_start.php'); ?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>

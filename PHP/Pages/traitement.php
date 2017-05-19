@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once('../Modules/session_start.php');
 include '../Includes/fonctions.php';
 
 if (isset($_POST['connexion']))

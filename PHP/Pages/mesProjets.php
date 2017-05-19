@@ -1,3 +1,4 @@
+<?php require_once('../Modules/session_start.php'); ?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -14,7 +15,7 @@
 
       <div id="contenu">
         <?php include '../Includes/fonctions.php';
-          voirMesProjets ($_SESSION["login"]);
+          voirMesProjets ($_SESSION["loginch"]);
         ?>
        </div>
       <?php include('../Includes/footer.php'); ?>

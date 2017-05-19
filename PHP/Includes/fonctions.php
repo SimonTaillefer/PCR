@@ -15,7 +15,7 @@ function connexion ($login,$password)
         if ((pg_num_rows($result))==1)
         {
             $_SESSION['loginch'] = $login;
-            header("location: accueil_chercheurs.php");
+            header("location: ../../index.php");
         }
         else
         {
@@ -38,7 +38,7 @@ function connexion ($login,$password)
         if ((pg_num_rows($result))==1)
         {
             $_SESSION['loginab'] = $login;
-            header("location: accueil_abonnes.php");
+            header("location: ../../index.php");
         }
         else
         {
