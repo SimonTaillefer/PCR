@@ -18,6 +18,8 @@
         </h2>
 
         <form action="traitement.php" method="post">
+        <fieldset>
+          <legend>Nouveau mot de passe</legend>
           <br>
           <label>Nom d'utilisateur ou adresse electronique. (obligatoire)</label><br>
           <input type="text" name="username">
@@ -27,6 +29,7 @@
           <br>
           <br>
           <input type="submit" value="Changer mot de passe" name="nouveau_mot_de_passe">
+        </fieldset>
         </form>
  
        </div>

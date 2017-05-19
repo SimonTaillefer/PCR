@@ -18,6 +18,8 @@
 
          
         <form action="traitement.php" method="post">
+        <fieldset>
+          <legend>Inscription</legend>
           <label>Vous êtes un ? </label><br>
           <select name="utilisateur">
             <option value=chercheur>Chercheur</option>
@@ -46,6 +48,7 @@
           <br>
           <br>
           <input type="submit" value="valider" name="creercompte">
+        </fieldset>
         </form>
  
       </div>

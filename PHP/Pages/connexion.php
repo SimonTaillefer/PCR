@@ -18,6 +18,8 @@
 
          
         <form action="traitement.php" method="post">
+        <fieldset>
+          <legend>Connexion</legend>
           <label>Nom d'utilisateur </label><br>
           <input type="text" name="username">
           <br>
@@ -29,6 +31,7 @@
           <br>
           <br>
           <input type="submit" value="Se Connecter" name="connexion">
+        </fieldset>
         </form>
 
         <?php 
