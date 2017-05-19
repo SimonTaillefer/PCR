@@ -35,10 +35,11 @@
         </form>
 
         <?php 
-          if (isset($_GET['msgErreur'])) {
+          if (isset($_GET['msgErreur']))  
+          {
             echo '<p>' . $_GET['msgErreur'] . '</p>';
           }
-          ?>
+        ?>
 
       </div>
       <?php include('../Includes/footer.php'); ?>

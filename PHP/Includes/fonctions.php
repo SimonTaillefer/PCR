@@ -14,7 +14,7 @@ function connexion ($login,$password)
             //si identifiant correct redirection vers la page d'accueil des chercheurs
         if ((pg_num_rows($result))==1)
         {
-            $_SESSION['login'] = $login;
+            $_SESSION['loginch'] = $login;
             header("location: accueil_chercheurs.php");
         }
         else
@@ -37,6 +37,7 @@ function connexion ($login,$password)
             //si identifiant correct redirection vers la page d'accueil des abonnes
         if ((pg_num_rows($result))==1)
         {
+            $_SESSION['loginab'] = $login;
             header("location: accueil_abonnes.php");
         }
         else
@@ -166,26 +167,43 @@ function monProfil($login)
 {
     require_once("../Modules/connect.inc.php");
 
-    $requete = "SELECT nomCh, prenomCh, mailch, telch FROM CHERCHEURS WHERE loginch = '".$login."'";
-    $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
-    $row=pg_fetch_array($result);
-    echo "<center>";
-    echo "<br><br>";
-    echo "<h4>".$row["nomch"]." ".$row["prenomch"]."</h4>";
-    echo "Coordonnes<br>";
-    echo "Email : ".$row["mailch"];
-    echo "<br>Téléphone : ".$row["telch"];
-
-    $requete = "SELECT nomEq FROM EquipeProjets e,Appartenir a WHERE a.loginch='".$login."' and a.codeEq=e.codeEq";
-    $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
-    $num=pg_numrows($result);
-    echo "<br>Equipes : ";
-    for ($i=0; $i<$num; $i++)
+    if ((substr($login, 0, 2))==='ch')
     {
-       $row=pg_fetch_array($result);
-       echo $row["nomeq"].", ";
-   }
-   echo "</center>";
+        $requete = "SELECT nomCh, prenomCh, mailch, telch FROM CHERCHEURS WHERE loginch = '".$login."'";
+        $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+        $row=pg_fetch_array($result);
+        echo "<center>";
+        echo "<br><br>";
+        echo "<h4>".$row["nomch"]." ".$row["prenomch"]."</h4>";
+        echo "Coordonnes<br>";
+        echo "Email : ".$row["mailch"];
+        echo "<br>Téléphone : ".$row["telch"];
+
+        $requete = "SELECT nomEq FROM EquipeProjets e,Appartenir a WHERE a.loginch='".$login."' and a.codeEq=e.codeEq";
+        $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+        $num=pg_numrows($result);
+        echo "<br>Equipes : ";
+        for ($i=0; $i<$num; $i++)
+        {
+           $row=pg_fetch_array($result);
+           echo $row["nomeq"].", ";
+       }
+       echo "</center>";
+    }
+    else
+    {
+        $requete = "SELECT nomabo, prenomabo, mailabo FROM abonnes WHERE loginabo= '".$login."'";
+        $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+        $row=pg_fetch_array($result);
+        echo "<center>";
+        echo "<br><br>";
+        echo "<h4>".$row["nomabo"]." ".$row["prenomabo"]."</h4>";
+        echo "Coordonnes<br>";
+        echo "Email : ".$row["mailabo"];
+        echo "</center>";
+    }
+
+    
 }
 
 function selectionEquipe()

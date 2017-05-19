@@ -125,13 +125,14 @@ INSERT INTO abonnes  VALUES ('abbm5','2faefd317532eb16143481a2e682a035','bonne',
 
 INSERT INTO Projet (codeProjet, titreProjet, themes, budget, dateDebut, description, loginCh, codeEq) VALUES ('prpcr1','','','','','','','chld2','1');
 INSERT INTO Projet (codeProjet, titreProjet, themes, budget, dateDebut, description, loginCh, codeEq) VALUES ('prpcr2','','','','','','','chrl1','2');
-INSERT INTO Projet (codeProjet, titreProjet, themes, budget, dateDebut, description, loginCh, codeEq) VALUES ('prpcr3','','','','','','','chts3','8');
-INSERT INTO Projet (codeProjet, titreProjet, themes, budget, dateDebut, description, loginCh, codeEq) VALUES ('prpcr4','','','','','','','chaf14','10');
-INSERT INTO Projet (codeProjet, titreProjet, themes, budget, dateDebut, description, loginCh, codeEq) VALUES ('prpcr5','','','','','','','chal30','7');
-INSERT INTO Projet (codeProjet, titreProjet, themes, budget, dateDebut, description, loginCh, codeEq) VALUES ('prpcr6','','','','','','','chai12','3');
-INSERT INTO Projet (codeProjet, titreProjet, themes, budget, dateDebut, description, loginCh, codeEq) VALUES ('prpcr7','','','','','','','chap13','');
-INSERT INTO Projet (codeProjet, titreProjet, themes, budget, dateDebut, description, loginCh, codeEq) VALUES ('prpcr8','','','','','','','chah23','');
-INSERT INTO Projet (codeProjet, titreProjet, themes, budget, dateDebut, description, loginCh, codeEq) VALUES ('prpcr9','','','','','','','chlc9','');
+INSERT INTO Projet (codeProjet, titreProjet, themes, budget, dateDebut, description, loginCh, codeEq) VALUES ('prpcr3','','','','','','','chai12','3');
+INSERT INTO Projet (codeProjet, titreProjet, themes, budget, dateDebut, description, loginCh, codeEq) VALUES ('prpcr4','','','','','','','chlc9','4');
+INSERT INTO Projet (codeProjet, titreProjet, themes, budget, dateDebut, description, loginCh, codeEq) VALUES ('prpcr5','','','','','','','chts3','5');
+INSERT INTO Projet (codeProjet, titreProjet, themes, budget, dateDebut, description, loginCh, codeEq) VALUES ('prpcr6','','','','','','','chaf14','6');
+INSERT INTO Projet (codeProjet, titreProjet, themes, budget, dateDebut, description, loginCh, codeEq) VALUES ('prpcr7','','','','','','','chga7','7');
+INSERT INTO Projet (codeProjet, titreProjet, themes, budget, dateDebut, description, loginCh, codeEq) VALUES ('prpcr8','','','','','','','chap13','8');
+INSERT INTO Projet (codeProjet, titreProjet, themes, budget, dateDebut, description, loginCh, codeEq) VALUES ('prpcr9','','','','','','','chat4','9');
+INSERT INTO Projet (codeProjet, titreProjet, themes, budget, dateDebut, description, loginCh, codeEq) VALUES ('prpcr10','','','','','','','chas6','10');
 
 /*Dans PUBLICATIONS*/
 INSERT INTO Publication (codePub, titrePub, typePub, datePub) VALUES ('1','Contrôle de systèmes multimédia interactifs','memoire','20/06/2016');

@@ -13,7 +13,7 @@
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
 				<?php 
-				if (!isset($_SESSION["login"]))
+				if (!isset($_SESSION["loginch"]))
 				{
 
 				}
@@ -39,14 +39,14 @@
 				</li>
 				<li>
 					<?php 
-					if (!isset($_SESSION["login"]))
+					if ((!isset($_SESSION['loginch'])) && (!isset($_SESSION['loginab'])))
 						echo '<a href="/PCR/PHP/Pages/connexion.php"><span class="glyphicon glyphicon-log-in"></span> Connexion</a>';
 					else
 						echo '<a href="/PCR/PHP/Pages/deconnexion.php"><span class="glyphicon glyphicon-log-out"></span> Deconnexion</a>';
 					?>
 				</li>
 				<?php 
-				if (!isset($_SESSION["login"]))
+				if((!isset($_SESSION['loginch'])) && (!isset($_SESSION['loginab'])))
 				{
 					echo "<li>";
 					echo '<a href="/PCR/PHP/Pages/inscription.php"><span class="glyphicon glyphicon-plus"></span> Inscription</a>';

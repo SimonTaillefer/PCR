@@ -19,7 +19,14 @@
         </h2>
 
          <?php include '../Includes/fonctions.php';
-            monProfil($_SESSION["login"]);
+           if (isset($_SESSION['loginch'])) 
+           {
+             monProfil($_SESSION["loginch"]);
+           }
+           else
+           {
+             monProfil($_SESSION["loginab"]);
+           }
          ?>
         
       </div>
