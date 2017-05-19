@@ -195,7 +195,7 @@ function selectionEquipe()
     $requete = "SELECT nomch, prenomch FROM chercheurs ORDER BY nomch";
     $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
 
-    echo '<form action="traitement.php" method="post">'
+    echo '<form action="traitement.php" method="post">';
     echo '<fieldset><legend>';
     echo  "<table>"; 
     echo "<tr>";
