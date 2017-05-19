@@ -213,25 +213,15 @@ function selectionEquipe()
     $requete = "SELECT nomch, prenomch FROM chercheurs ORDER BY nomch";
     $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
 
-    echo '<form action="traitement.php" method="post">';
-    echo '<fieldset><legend>';
-    echo  "<table>"; 
-    echo "<tr>";
-    echo "<th>Nom</th>";
-    echo "<th>Prenom</th>";
-    echo "<th>Cocher les membres</th>";
-    echo "</tr>";
+    $chercheurs = array(); 
 
     $num = pg_numrows($result);
     for ($i=0; $i<$num; $i++) 
     {
         $row=pg_fetch_array($result);
-        echo "<tr>";
-        echo "<td>".strtoupper($row["nomch"])."</td>"; 
-        echo "<td>".ucfirst($row["prenomch"])."</td>";
-        echo "<td>".$row["mailch"]."</td>"; 
-        echo "</tr>";
+        $chercheurs[$i] =  strtoupper($row["nomch"]) . ' ' . ucfirst($row["prenomch"]);
     }
+    return $chercheurs;
 }
 
 function creerEquipe($nom)
