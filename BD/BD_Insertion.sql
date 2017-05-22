@@ -123,9 +123,9 @@ INSERT INTO abonnes  VALUES ('abbm5','2faefd317532eb16143481a2e682a035','bonne',
 
 /*---------------------------------------------INCOMPLET-----------------------------------------------------------------------------------------------*/
 
-INSERT INTO Projet (codeProjet, titreProjet, themes, budget, dateDebut, description, loginCh, codeEq) VALUES ('prpcr1','','','','','','','chld2','1');
-INSERT INTO Projet (codeProjet, titreProjet, themes, budget, dateDebut, description, loginCh, codeEq) VALUES ('prpcr2','','','','','','','chrl1','2');
-INSERT INTO Projet (codeProjet, titreProjet, themes, budget, dateDebut, description, loginCh, codeEq) VALUES ('prpcr3','','','','','','','chai12','3');
+INSERT INTO Projet (codeProjet, titreProjet, themes, budget, dateDebut, description, loginCh, codeEq) VALUES ('prpcr1','Projet Smart Surface','','','','','','chld2','1');
+INSERT INTO Projet (codeProjet, titreProjet, themes, budget, dateDebut, description, loginCh, codeEq) VALUES ('prpcr2','Projet ADREAM','','','','','Une mise en réseau massive d’objets et d’agents intelligents','chrl1','2');
+INSERT INTO Projet (codeProjet, titreProjet, themes, budget, dateDebut, description, loginCh, codeEq) VALUES ('prpcr3','Projet ARCAS','','','','','Conception et le développement de robots volants dans le contexte d’opérations d’assemblages.','chai12','3');
 INSERT INTO Projet (codeProjet, titreProjet, themes, budget, dateDebut, description, loginCh, codeEq) VALUES ('prpcr4','','','','','','','chlc9','4');
 INSERT INTO Projet (codeProjet, titreProjet, themes, budget, dateDebut, description, loginCh, codeEq) VALUES ('prpcr5','','','','','','','chts3','5');
 INSERT INTO Projet (codeProjet, titreProjet, themes, budget, dateDebut, description, loginCh, codeEq) VALUES ('prpcr6','','','','','','','chaf14','6');
@@ -135,45 +135,114 @@ INSERT INTO Projet (codeProjet, titreProjet, themes, budget, dateDebut, descript
 INSERT INTO Projet (codeProjet, titreProjet, themes, budget, dateDebut, description, loginCh, codeEq) VALUES ('prpcr10','','','','','','','chas6','10');
 
 /*Dans PUBLICATIONS*/
-INSERT INTO Publication (codePub, titrePub, typePub, datePub) VALUES ('1','Contrôle de systèmes multimédia interactifs','memoire','20/06/2016');
-INSERT INTO Publication (codePub, titrePub, typePub, datePub) VALUES ('2','Evolution internet des objets','article','02/02/2017');
-INSERT INTO Publication (codePub, titrePub, typePub, datePub) VALUES ('3','Présentation du projet ALPHA','rapport','20/06/1993');
-INSERT INTO Publication (codePub, titrePub, typePub, datePub) VALUES ('4','Compte-rendu réunion de suivi de projet','frpte-rendu','27/07/1983');
-INSERT INTO Publication (codePub, titrePub, typePub, datePub) VALUES ('5','Modélisation et caractérisation d\'un laser à modes vérouillés fibre pour la génération très haute fréquence','','04/07/2016');
-INSERT INTO Publication (codePub, titrePub, typePub, datePub) VALUES ('6','Des batteries plus sûres inspirées de nos piles classiques','','');
-INSERT INTO Publication (codePub, titrePub, typePub, datePub) VALUES ('7','La chaleur du rayonnement infrarouge','','');
-INSERT INTO Publication (codePub, titrePub, typePub, datePub) VALUES ('8','Relativité restreinte et naissance de l espace-temps','','');
-INSERT INTO Publication (codePub, titrePub, typePub, datePub) VALUES ('9','Pyrène, robot humanoïde nouvelle génération','','');
-INSERT INTO Publication (codePub, titrePub, typePub, datePub) VALUES ('10','','','');
+/************MODIFIER VALEUR TITRE PUB*/
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('1','Contrôle de systèmes multimédia interactifs','memoire','30/01/2017');
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('2','Contrôle de systèmes multimédia interactifs','memoire','28/02/2017');
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('3','Contrôle de systèmes multimédia interactifs','memoire','30/03/2017');
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('4','Contrôle de systèmes multimédia interactifs','memoire','30/04/2017');
+
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('5','Contrôle de systèmes multimédia interactifs','rapport','30/01/2017');
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('6','Contrôle de systèmes multimédia interactifs','rapport','28/02/2017');
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('7','Contrôle de systèmes multimédia interactifs','rapport','30/03/2017');
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('8','Contrôle de systèmes multimédia interactifs','rapport','30/04/2017');
+
+
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('9','Contrôle de systèmes multimédia interactifs','compte-rendu','15/01/2017');
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('10','Contrôle de systèmes multimédia interactifs','compte-rendu','15/02/2017');
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('11','Contrôle de systèmes multimédia interactifs','compte-rendu','15/03/2017');
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('12','Contrôle de systèmes multimédia interactifs','compte-rendu','15/04/2017');
+
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('13','Contrôle de systèmes multimédia interactifs','article','01/06/2016');
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('14','La chaleur du rayonnement infrarouge','article','01/07/2016');
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('15','Pyrène, robot humanoïde nouvelle génération','article','01/08/2016');
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('16','Contrôle de systèmes multimédia interactifs','article','01/09/2016');
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('17','Des batteries plus sûres inspirées de nos piles classiques','article','01/10/2016');
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('18','Relativité restreinte et naissance de l espace-temps','article','01/11/2016');
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('19','Contrôle de systèmes multimédia interactifs','article','01/12/2016');
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('20','Contrôle de systèmes multimédia interactifs','article','01/01/2017');
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('21','Evolution internet des objets','article','01/02/2017');
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('22','Evolution internet des objets','article','01/03/2017');
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('23','Evolution internet des objets','article','01/04/2017');
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('24','Evolution internet des objets','article','01/05/2017');
+
+
+/*
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('2','Evolution internet des objets','article','02/02/2017');
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('3','Présentation du projet ALPHA','rapport','20/06/1993');
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('4','Compte-rendu réunion de suivi de projet','compte-rendu','27/07/1983');
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('5','Modélisation et caractérisation d\'un laser à modes vérouillés fibre pour la génération très haute fréquence','','04/07/2016');
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('6','Des batteries plus sûres inspirées de nos piles classiques','','');
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('7','La chaleur du rayonnement infrarouge','','');
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('8','Relativité restreinte et naissance de l espace-temps','','');
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('9','Pyrène, robot humanoïde nouvelle génération','','');
+INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('10','','','');
+*/
+
+
+INSERT INTO Publier (codePub, loginCh) VALUES ('1','chrl1');
+INSERT INTO Publier (codePub, loginCh) VALUES ('2','chld2');
+INSERT INTO Publier (codePub, loginCh) VALUES ('3','chts3');
+INSERT INTO Publier (codePub, loginCh) VALUES ('4','chat4');
+
+INSERT INTO Publier (codePub, loginCh) VALUES ('5','chmf5');
+INSERT INTO Publier (codePub, loginCh) VALUES ('6','chas6');
+INSERT INTO Publier (codePub, loginCh) VALUES ('7','chga7');
+INSERT INTO Publier (codePub, loginCh) VALUES ('8','chta8');
+
+INSERT INTO Publier (codePub, loginCh) VALUES ('9','chtj10');
+INSERT INTO Publier (codePub, loginCh) VALUES ('10','chlc9');
+INSERT INTO Publier (codePub, loginCh) VALUES ('11','chai12');
+INSERT INTO Publier (codePub, loginCh) VALUES ('12','chbc11');
+
+INSERT INTO Publier (codePub, loginCh) VALUES ('13','chrl1');
+INSERT INTO Publier (codePub, loginCh) VALUES ('14','chld2');
+INSERT INTO Publier (codePub, loginCh) VALUES ('15','chts3');
+INSERT INTO Publier (codePub, loginCh) VALUES ('16','chat4');
+INSERT INTO Publier (codePub, loginCh) VALUES ('17','chap13');
+INSERT INTO Publier (codePub, loginCh) VALUES ('18','chaf14');
+INSERT INTO Publier (codePub, loginCh) VALUES ('19','chmm15');
+INSERT INTO Publier (codePub, loginCh) VALUES ('20','chav16');
+INSERT INTO Publier (codePub, loginCh) VALUES ('21','chap17');
+INSERT INTO Publier (codePub, loginCh) VALUES ('22','chaj18');
+INSERT INTO Publier (codePub, loginCh) VALUES ('23','chas19');
+INSERT INTO Publier (codePub, loginCh) VALUES ('24','chap20');
 
 
 
-INSERT INTO Publier (codePub, loginCh) VALUES ('','chrl1');
-INSERT INTO Publier (codePub, loginCh) VALUES ('','chld2');
-INSERT INTO Publier (codePub, loginCh) VALUES ('','chts3');
-INSERT INTO Publier (codePub, loginCh) VALUES ('','chat4');
-INSERT INTO Publier (codePub, loginCh) VALUES ('','chas6');
-INSERT INTO Publier (codePub, loginCh) VALUES ('','chtj10');
-INSERT INTO Publier (codePub, loginCh) VALUES ('','chas19');
-INSERT INTO Publier (codePub, loginCh) VALUES ('','chlc9');
 
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('1','AAAAA','21/02/2017','13','chbc11','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('2','CCCCCCCCC','21/02/2017','','','13','abgr3');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('3','BBBBBBBBB','21/02/2017','','','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('4','DDDDDDDDD','21/02/2017','','','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('5','QQQQQQQQQQQ','21/02/2017','','','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('6','KKKKKKKKKKKKK','21/02/2017','','','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('7','MMMMMMM','21/02/2017','','','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('8','','','','','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('9','','','','','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('10','','','','','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('11','','','','','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('12','','','','','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('13','','','','','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('15','','','','','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('16','','','','','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('17','','','','','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
 
-
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
 
 
 

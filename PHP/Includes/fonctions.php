@@ -1,5 +1,72 @@
 <?php
 
+function afficherPublicationsChercheurs()
+{
+    require_once("../Modules/connect.inc.php");
+
+    $requete='SELECT titrepub, typepub, datepub FROM publications';
+    $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+    $num=pg_num_rows($result);
+
+    for ($i=0; $i<$num; $i++) 
+    {
+        $row=pg_fetch_array($result);
+        echo "<br>";
+        echo $row["typepub"]."<br>";
+        echo '<a href="/PCR/PHP/Pages/contenuPub.php" role="button" name="titrepubAfficher">'.$row["titrepub"]."</a><br>";
+        echo $row["datepub"]."<br><br>";
+
+    }
+}
+
+
+function afficherPublications()
+{
+    require_once("../Modules/connect.inc.php");
+
+    $requete="SELECT titrepub, typepub, datepub FROM publications WHERE typePub='article'";
+    $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+    $num=pg_num_rows($result);
+
+    for ($i=0; $i<$num; $i++) 
+    {
+        $row=pg_fetch_array($result);
+        echo "<br>";
+        echo $row["typepub"]."<br>";
+        echo '<a href="/PCR/PHP/Pages/contenuPub.php" role="button" name="titrepubAfficher">'.$row["titrepub"]."</a><br>";
+        echo $row["datepub"]."<br><br>";
+    }
+}
+
+function afficherContenuPub ()
+{
+    
+}
+
+function ajouterPublication($titre,$type,$contenu,$date)
+{
+    require_once("../Modules/connect.inc.php");
+
+    $requete='SELECT * FROM publications';
+    $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+    $num=pg_num_rows($result);
+
+    $num=$num+1;
+    $requete="INSERT INTO publications VALUES('".$num."','".$titre."','".$type."','".$date."')";
+    $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+
+    header("location: publications.php");   
+}
+
+function commenterPublication ()
+{
+    require_once("../Modules/connect.inc.php");
+
+    $requete='SELECT * FROM commentaires';
+    $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+    $num=pg_num_rows($result);
+}
+
 function connexion ($login,$password)
 {
         //si l'utilisateur est un chercheur

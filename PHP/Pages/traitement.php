@@ -23,8 +23,9 @@ elseif (isset($_POST["nouveau_mot_de_passe"]))
 {
 	nouveau_motdePasse ($_POST["username"],$_POST["pwd"]);
 }
-elseif (isset($_POST["creation_equipe"])) {
-		# code...
+elseif (isset($_POST["enregistrer"])) 
+{
+	ajouterPublication($_POST["typepub"],$_POST["titrepub"],$_POST["contenupub"],date("d/m/Y"));
 }
 
 ?>

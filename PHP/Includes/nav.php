@@ -33,9 +33,25 @@
 				<li>
 					<a href="/PCR/PHP/Pages/annuaire.php"><span class="glyphicon glyphicon-list-alt"></span> Annuaire</a>
 				</li>
-				<li>
-					<a href="#"><span class="glyphicon glyphicon-pencil"></span> Publications</a>
-				</li>
+				<?php 
+				if (!isset($_SESSION["loginch"]))
+				{
+					echo "<li>";
+						echo '<a href="/PCR/PHP/Pages/publications.php"><span class="glyphicon glyphicon-pencil"></span> Publications</a>';
+					echo "</li>";
+				}
+				else
+				{
+					echo '<li class="dropdown">';
+					echo '<a href="/PCR/PHP/Pages/publications.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Publications <span class="caret"></span></a>';
+					echo '<ul class="dropdown-menu">';
+					echo '<li><a href="/PCR/PHP/Pages/ajouterPublication.php">Nouvelle Publication</a></li>';
+					echo '<li><a href="/PCR/PHP/Pages/publications.php">Voir les publications</a></li>';
+					echo "</ul>";
+					echo "</li>";
+					
+				}
+				?>				
 				<li>
 					<?php 
 					if ((!isset($_SESSION['loginch'])) && (!isset($_SESSION['loginab'])))
