@@ -4,7 +4,7 @@ function afficherPublicationsChercheurs()
 {
     require_once("../Modules/connect.inc.php");
 
-    $requete='SELECT titrepub, typepub, datepub FROM publications';
+    $requete='SELECT titrepub, typepub, datepub,nomch,prenomch FROM publications p, publier pu, chercheurs ch WHERE p.codepub=pu.codepub AND pu.loginch=ch.loginch';
     $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
     $num=pg_num_rows($result);
 
@@ -14,7 +14,8 @@ function afficherPublicationsChercheurs()
         echo "<br>";
         echo $row["typepub"]."<br>";
         echo '<a href="/PCR/PHP/Pages/contenuPub.php" role="button" name="titrepubAfficher">'.$row["titrepub"]."</a><br>";
-        echo $row["datepub"]."<br><br>";
+        echo $row["datepub"]."<br>";
+        echo $row["nomch"]." ".$row["prenomch"]."<br><br>";
 
     }
 }
@@ -24,7 +25,7 @@ function afficherPublications()
 {
     require_once("../Modules/connect.inc.php");
 
-    $requete="SELECT titrepub, typepub, datepub FROM publications WHERE typePub='article'";
+    $requete="SELECT titrepub, typepub, datepub,nomch,prenomch FROM publications p, publier pu, chercheurs ch WHERE p.codepub=pu.codepub AND pu.loginch=ch.loginch AND typePub='article'";
     $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
     $num=pg_num_rows($result);
 
@@ -34,13 +35,14 @@ function afficherPublications()
         echo "<br>";
         echo $row["typepub"]."<br>";
         echo '<a href="/PCR/PHP/Pages/contenuPub.php" role="button" name="titrepubAfficher">'.$row["titrepub"]."</a><br>";
-        echo $row["datepub"]."<br><br>";
+        echo $row["datepub"]."<br>";
+        echo $row["nomch"]." ".$row["prenomch"]."<br><br>";
     }
 }
 
 function afficherContenuPub ()
 {
-    
+
 }
 
 function ajouterPublication($titre,$type,$contenu,$date)
