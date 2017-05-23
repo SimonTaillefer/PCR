@@ -16,7 +16,7 @@ CREATE TABLE Publications (
 	codePub varchar(255),
 	titrePub varchar(255),
 	typePub varchar(255),
-	datePub date,
+	datePub varchar(10),
 	CONSTRAINT PK_Pub PRIMARY KEY (codePub)
 );
 
@@ -52,7 +52,7 @@ CREATE TABLE Projets (
 	titreProjet varchar(255),
 	theme varchar(255),
 	budget numeric,
-	dateDebut date,
+	dateDebut varchar(10),
 	description varchar(255),
 	loginChefProjet varchar(255),
 	codeEq varchar(255),
@@ -86,7 +86,7 @@ CREATE TABLE Publier (
 CREATE TABLE Commentaires (
 	codeCom varchar(255),
 	contenuCom varchar(255),
-	dateCom date,
+	dateCom varchar(10),
 	codePubCh varchar(255),
 	loginCh varchar(255),
 	codePubAbo varchar(255),
