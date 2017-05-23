@@ -30,7 +30,7 @@ elseif (isset($_POST["enregistrer"]))
 elseif (isset($_POST["ajouterCommentaire"])) 
 {
 	if (isset($_SESSION["loginab"]))
-    {
+	{
 		commenterPublication($_SESSION["loginab"],$_POST["contenucommentaire"],date("d/m/Y"),$_POST["codepubAfficher"]);
 	}
 	elseif (isset($_SESSION["loginch"])) 
@@ -38,5 +38,4 @@ elseif (isset($_POST["ajouterCommentaire"]))
 		commenterPublication($_SESSION["loginch"],$_POST["contenucommentaire"],date("d/m/Y"),$_POST["codepubAfficher"]);
 	}
 }
-
 ?>

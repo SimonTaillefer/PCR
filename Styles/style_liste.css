@@ -1,0 +1,59 @@
+ .div_select {
+   border: 1px solid #000000;
+   width : 300px;
+   background-color : #FFFFFF;
+}
+
+.div_select_header {
+   background-color : #31a8e8;
+}
+
+.div_select_header td {
+   padding: 0px 6px 0px 6px;
+   font: 15px 'BebasNeue';
+   font-weight: bold;
+   color: #000000;
+}
+
+.div_select_content td {
+   padding: 0px 6px 0px 6px;
+   font: 15px 'BebasNeue';
+
+}
+
+.div_select_content {
+   width : 300px;
+   height : 172px ;
+   overflow : scroll;
+   scrollbar-face-color: #DDDDDD;
+   scrollbar-shadow-color: #777777;
+   scrollbar-highlight-color: #ffffff;
+   scrollbar-3dlight-color: #eeeeee;
+   scrollbar-darkshadow-color: #000000;
+   scrollbar-track-color: #eeeeee;
+   scrollbar-arrow-color: #000000
+}
+
+.select_even {
+   cursor: hand;
+   background:    #FFFFFF;
+}
+
+.select_odd {
+   cursor: hand;
+   background:    #F2FAFF;
+}
+
+.select_over {
+   cursor: hand;
+   background-color : #CCEEFF;
+   color: #000000;
+   font-weight: bold;
+}
+
+.select_checked {
+   cursor: hand;
+   background-color : #CCFF99;
+   color: #000000;
+   font-weight: bold;
+}

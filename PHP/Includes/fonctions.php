@@ -52,9 +52,9 @@ function ajouterPublication($titre,$type,$contenu,$date)
     require_once("../Modules/connect.inc.php");
 
     $monfichier = fopen("../../Fichiers/".$titre.".txt", 'a+');
- 
+
     fputs($monfichier,"$contenu"); 
- 
+
     fclose($monfichier);
 
     $requete='SELECT * FROM publications';
@@ -332,28 +332,28 @@ function monProfil($login)
            echo $row["nomeq"].", ";
        }
        echo "</center>";
-    }
-    else
-    {
-        $requete = "SELECT nomabo, prenomabo, mailabo FROM abonnes WHERE loginabo= '".$login."'";
-        $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
-        $row=pg_fetch_array($result);
-        echo "<center>";
-        echo "<br><br>";
-        echo "<h4>".$row["nomabo"]." ".$row["prenomabo"]."</h4>";
-        echo "Coordonnes<br>";
-        echo "Email : ".$row["mailabo"];
-        echo "</center>";
-    }
+   }
+   else
+   {
+    $requete = "SELECT nomabo, prenomabo, mailabo FROM abonnes WHERE loginabo= '".$login."'";
+    $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+    $row=pg_fetch_array($result);
+    echo "<center>";
+    echo "<br><br>";
+    echo "<h4>".$row["nomabo"]." ".$row["prenomabo"]."</h4>";
+    echo "Coordonnes<br>";
+    echo "Email : ".$row["mailabo"];
+    echo "</center>";
+}
 
-    
+
 }
 
 function selectionEquipe()
 {
     require_once("../Modules/connect.inc.php");
 
-    $requete = "SELECT nomch, prenomch FROM chercheurs ORDER BY nomch";
+    $requete = "SELECT nomch, prenomch, loginch FROM chercheurs ORDER BY nomch";
     $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
 
     $chercheurs = array(); 
@@ -362,8 +362,9 @@ function selectionEquipe()
     for ($i=0; $i<$num; $i++) 
     {
         $row=pg_fetch_array($result);
-        $chercheurs[$i] =  strtoupper($row["nomch"]) . ' ' . ucfirst($row["prenomch"]);
+        $chercheurs[$i] =  array($row["loginch"], strtoupper($row["nomch"]) . ' ' . ucfirst($row["prenomch"]));
     }
+    pg_close($dbconn);
     return $chercheurs;
 }
 
@@ -380,22 +381,23 @@ function creerEquipe($nom)
     pg_exec($dbconn,$requete2) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
 
     pg_close($dbconn);
+    return $num;
 }
 
 
 function ajoutMembreEquipe($loginch, $codeEq)
 {
-    require_once("../Modules/connect.inc.php");
+    include("../Modules/connect.inc.php");
 
-    $requete = "INSERT INTO Appartenir VALUES('".$loginch."','".$codeEq."')";
+    $requete="INSERT INTO appartenir VALUES('".$loginch."','".$codeEq."')";
     pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
-
+    
     pg_close($dbconn);
 }
 
 function creerProjet($login,$titre,$theme,$budget,$date,$description,$codeEq)
 {
-    require_once("../Modules/connect.inc.php");
+    include("../Modules/connect.inc.php");
 
     $requete='SELECT * FROM projets';
     $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
@@ -403,7 +405,7 @@ function creerProjet($login,$titre,$theme,$budget,$date,$description,$codeEq)
     $num=$num+1;
 
     $codeprojet='prprc'.$num;
-    $requete2="INSERT INTO projets VALUES('".$codeprojet."','".$titre."','".$theme."','".$budget."','".$date."','".$description."','".$login."')";
+    $requete2="INSERT INTO projets VALUES('".$codeprojet."','".$titre."','".$theme."','".$budget."','".$date."','".$description."','".$login."','".$codeEq."')";
     pg_exec($dbconn,$requete2) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
 
     pg_close($dbconn);
@@ -422,8 +424,84 @@ function voirMesProjets ($login)
     for ($i=0; $i<$num; $i++)
     {
        $row=pg_fetch_array($result);
-       echo $row["titreProjet"].", ";
+       echo $row["titreprojet"].", ";
    }
    pg_close($dbconn);
+}
+
+
+function checkedSelect( $nom, $structure, $contenu, $selection = null) 
+{
+
+          //////////////// entete du composant \\\\\\\\\\\\\\\\\\\\\\\\\        
+  if(sizeof($selection) == sizeof($contenu))
+    $checked = "checked";
+else
+    $checked = "";
+
+
+$str = '<div class="div_select">'
+.'<div class="div_select_header">'
+.'<table width="100%">'
+.'<tr>'
+.'<td width="20" align="center"><input type="checkbox" id="'.$nom.'" onClick="javascript:selectAll(this, '.sizeof($contenu).');" '.$checked.'/></td>';
+
+              //--- colonnes
+for($i = 0, $max = sizeof($structure); $i < $max; $i++) {
+    $str .= '<td ';
+    if(isset($structure[$i]["align"])) $str .= 'align="'.$structure[$i]["align"].'" ';
+    if(isset($structure[$i]["width"])) $str .= 'width="'.$structure[$i]["width"].'" ';                    
+    $str .= '>'.$structure[$i]["name"].'</td>';            
+}
+
+$str .= '</tr>'
+.'</table>'
+.'</div>';
+
+              //////////////// contenu du composant \\\\\\\\\\\\\\\\\\\\\\\\\        
+$str .= '<div class="div_select_content" >'                
+.'<table width="100%">';
+
+              //--- pour chaque ligne
+for($i = 0, $max = sizeof($contenu); $i < $max; $i++) {
+
+                  //--- style css (pair / impair)    
+    if($i%2)
+      $css_defaut = 'select_odd';
+  else
+      $css_defaut = 'select_even';    
+
+                  //--- element selectionne ?
+  if($selection != null && in_array($contenu[$i][0],$selection)) {                    
+      $checked = ' checked';
+      $css = 'select_checked';                        
+  }
+  else {
+      $checked = '';
+      $css = $css_defaut;                    
+  }
+
+                  //--- la checkbox
+  $str .= '<tr id="tr_'.$nom.$i.'" class="'.$css.'" onMouseOver=\'javascript:setEvenement("'.$nom.'","'.$i.'","over","'.$css.'",'.sizeof($contenu).',"td");\' onMouseOut=\'javascript:setEvenement("'.$nom.'","'.$i.'","out","'.$css_defaut.'",'.sizeof($contenu).',"td");\' '
+  .' onClick=\'javascript:setEvenement("'.$nom.'","'.$i.'","click", "'.$css_defaut.'",'.sizeof($contenu).',"td");\' >'
+  .'<td width="20" ><input type="checkbox" id="'.$nom.$i.'" name="'.$nom.'[]" value="'.$contenu[$i][0].'" onClick=\'javascript:setEvenement("'.$nom.'","'.$i.'","click","'.$css_defaut.'",'.sizeof($contenu).',"ck");\' '.$checked.' /></td>';
+
+                  //--- les colonnes
+  for($j = 1; $j < sizeof($contenu[$i]); $j++) {                    
+      $str .= '<td ';
+      if(isset($structure[$j-1]["align"])) $str .= 'align="'.$structure[$j-1]["align"].'" ';    
+      if(isset($structure[$j-1]["width"])) $str .= 'width="'.$structure[$j-1]["width"].'" ';                    
+      $str .= '>'.$contenu[$i][$j].'</td>';        
+  }
+
+  $str .= '</tr>';
+}
+
+              //--- fermeture des balises
+$str .= '</table>'
+.'</div>'
+.'</div>';
+
+return $str;
 }
 ?>

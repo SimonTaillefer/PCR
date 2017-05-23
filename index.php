@@ -14,6 +14,7 @@
       <?php include('PHP/Includes/nav.php'); ?>
       <div id="contenu">
         <h1><center>Accueil</center></h1>
+        <center><img src="PHP/Includes/image1.php"/></center>
         <center><img id="img_accueil" src="/PCR/Multimedias/Images/image_accueil.jpg" alt="l'image d'accueil"></center>
         <br>
         <p>L’environnement du financement de la recherche a changé : passage d’un mode de « financement direct » des laboratoires à un mode de « financement par projet », via des institutions et des programmations dédiées. Le management de projets n' a jamais eu autant d'importance qu'aujourd'hui.</p>
