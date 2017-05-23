@@ -1,8 +1,8 @@
 /* Définition police */
 @font-face
 {
-    font-family: 'BebasNeue';
-    src: url('BebasNeue.otf');
+	font-family: 'BebasNeue';
+	src: url('BebasNeue.otf');
 }
 
 /* Titre */
@@ -77,9 +77,9 @@ table
 }
 
 th {
-    background-color: #31a8e8;
-    color: white;
-    border: 1px solid black;
+	background-color: #31a8e8;
+	color: white;
+	border: 1px solid black;
 }
 
 tr:nth-child(even)
@@ -88,8 +88,8 @@ tr:nth-child(even)
 }
 
 th, td {
-    padding: 5px;
-    text-align: left;
+	padding: 5px;
+	text-align: left;
 }
 
 table td 
@@ -101,4 +101,3 @@ table td
 {
 	max-width: 30%;
 }
-

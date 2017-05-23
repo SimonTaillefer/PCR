@@ -1,4 +1,8 @@
-<?php require_once('../Modules/session_start.php'); ?>
+<?php
+require_once('../Modules/session_start.php');
+if (!isset($_SESSION["loginch"]))
+  header("Location: /PCR/index.php");
+?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
