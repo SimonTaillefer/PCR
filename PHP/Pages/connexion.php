@@ -14,14 +14,14 @@
     <?php include('../Includes/nav.php'); ?>
     <div id="contenu">
       <center>
-        <h2>
-          <center> Compte utilisateur</center>
-        </h2>
+        <h1>
+          <center> <br>Compte utilisateur</center>
+        </h1>
 
 
         <form action="traitement.php" method="post">
           <fieldset>
-            <legend>Connexion</legend>
+            <legend></legend>
             <label>Nom d'utilisateur </label><br>
             <input type="text" name="username">
             <br>

@@ -15,7 +15,7 @@
 
     <div id="contenu">
       <?php include '../Includes/fonctions.php';
-      echo "<br><center><h3>  Annuaire du PCR  </h3></center><br>";
+      echo "<br><center><h1>  Annuaire du PCR  </h1></center><legend></legend>";
       annuaire();
       ?>
     </div>

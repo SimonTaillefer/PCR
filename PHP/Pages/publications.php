@@ -14,10 +14,10 @@
     <?php include('../Includes/nav.php'); ?>
     <div id="contenu">
       <center>
-        <h2>
-          <center> Publications</center>
-        </h2>
-
+        <h1>
+          <center><br> Publications</center>
+        </h1>
+        <legend></legend>
         <?php include '../Includes/fonctions.php';
         if (isset($_SESSION['loginch'])) 
         {

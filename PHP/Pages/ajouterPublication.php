@@ -14,12 +14,12 @@
     <?php include('../Includes/nav.php'); ?>
     <div id="contenu">
       <center>
-        <h2>
-          <center> Ajouter Publication </center>
-        </h2>
+        <h1>
+          <center> <br>Ajouter Publication </center>
+        </h1><legend></legend>
 
         <form action="traitement.php" method="post">
-         <label>Type publication : </label>
+         <label>Type publication  </label>
          <select name="typepub">
           <option value=rapport>rapport</option>
           <option value=memoire>mémoire</option>

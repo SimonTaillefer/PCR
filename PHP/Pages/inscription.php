@@ -13,15 +13,15 @@
     <?php include('../Includes/nav.php'); ?>
     <div id="contenu">
       <center>
-        <h2>
-          <center> Inscription </center>
-        </h2>
+        <h1>
+          <center> <br>Inscription </center>
+        </h1>
 
 
         <form action="traitement.php" method="post">
           <fieldset>
-            <legend>Inscription</legend>
-            <label>Vous êtes un ? </label><br>
+            <legend></legend>
+            <label>Vous êtes un ? </label>
             <select name="utilisateur">
               <option value=chercheur>Chercheur</option>
               <option value=abonne>Abonné</option>

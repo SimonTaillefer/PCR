@@ -22,7 +22,7 @@ if (!isset($_SESSION["loginch"]))
     <div id="contenu">
       <center>
         <?php include '../Includes/fonctions.php'; 
-        echo "<br><center><h3>  Créer un projet  </h3></center><br>"; ?>
+        echo "<br><center><h1>  Créer un projet  </h1></center><legend></legend>"; ?>
         <?php
 
         $nom = 'Équipe';

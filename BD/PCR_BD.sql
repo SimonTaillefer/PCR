@@ -55,10 +55,10 @@ CREATE TABLE Projets (
 	dateDebut varchar(10),
 	description varchar(255),
 	loginChefProjet varchar(255),
-	codeEq varchar(255),
+	codeEqu varchar(255),
 	CONSTRAINT PK_Pro PRIMARY KEY (codeProjet),
 	CONSTRAINT FK_Pro_Ch FOREIGN KEY (loginChefProjet) REFERENCES Chercheurs(loginCh),
-	CONSTRAINT FK_Pro_Eq FOREIGN KEY (codeEq) REFERENCES EquipeProjets (codeEq)
+	CONSTRAINT FK_Pro_Eq FOREIGN KEY (codeEqu) REFERENCES EquipeProjets (codeEq)
 );
 
 CREATE TABLE Fichiers (
@@ -70,9 +70,9 @@ CREATE TABLE Fichiers (
 );
 
 CREATE TABLE Appartenir (
-	loginCh varchar(255),
+	loginChe varchar(255),
 	codeEq varchar(255),
-	CONSTRAINT FK_App_Ch FOREIGN KEY (loginCh) REFERENCES Chercheurs (loginCh),
+	CONSTRAINT FK_App_Ch FOREIGN KEY (loginChe) REFERENCES Chercheurs (loginCh),
 	CONSTRAINT FK_App_Eq FOREIGN KEY (codeEq) REFERENCES EquipeProjets(codeEq)
 );
 

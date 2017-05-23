@@ -1,4 +1,6 @@
-<?php require_once('../Modules/session_start.php'); ?>
+<?php
+require_once('../Modules/session_start.php');
+?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -17,19 +19,11 @@
         <h1>
           <center><br>Profil</center><legend></legend>
         </h1>
+        <?php include '../Includes/fonctions.php';
 
-         <?php include '../Includes/fonctions.php';
-           if (isset($_SESSION['loginch'])) 
-           {
-             monProfil($_SESSION["loginch"]);
-           }
-           else
-           {
-             monProfil($_SESSION["loginab"]);
-           }
-         ?>
-        
-      </div>
+          monProfil($_GET["loginChAfficher"]);
+        ?>
+       </div>
       <?php include('../Includes/footer.php'); ?>
     </div> <!-- /container -->
 
