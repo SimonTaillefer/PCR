@@ -18,6 +18,9 @@ if (!isset($_SESSION["loginch"]))
       <?php include('../Includes/nav.php'); ?>
 
       <div id="contenu">
+        <h1>
+          <center><br>Projet</center><legend></legend>
+        </h1>
         <?php include '../Includes/fonctions.php';
 
           detailProjets ($_SESSION["loginch"],$_GET["codeprojetAfficher"]);

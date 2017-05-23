@@ -1,16 +1,16 @@
 SET DATESTYLE TO 'european';
 
 /*Dans EquipeProjet*/
-INSERT INTO EquipeProjets (codeEq, nomEq) VALUES ('1','SARA');
-INSERT INTO EquipeProjets (codeEq, nomEq) VALUES ('2','MOST');
-INSERT INTO EquipeProjets (codeEq, nomEq) VALUES ('3','IDEA');
-INSERT INTO EquipeProjets (codeEq, nomEq) VALUES ('4','NEO');
-INSERT INTO EquipeProjets (codeEq, nomEq) VALUES ('5','RIS');
-INSERT INTO EquipeProjets (codeEq, nomEq) VALUES ('6','S4M');
-INSERT INTO EquipeProjets (codeEq, nomEq) VALUES ('7','ELIA');
-INSERT INTO EquipeProjets (codeEq, nomEq) VALUES ('8','OSE');
-INSERT INTO EquipeProjets (codeEq, nomEq) VALUES ('9','TSF');
-INSERT INTO EquipeProjets (codeEq, nomEq) VALUES ('10','ISGE');
+INSERT INTO EquipeProjets VALUES ('1','SARA');
+INSERT INTO EquipeProjets VALUES ('2','MOST');
+INSERT INTO EquipeProjets VALUES ('3','IDEA');
+INSERT INTO EquipeProjets VALUES ('4','NEO');
+INSERT INTO EquipeProjets VALUES ('5','RIS');
+INSERT INTO EquipeProjets VALUES ('6','S4M');
+INSERT INTO EquipeProjets VALUES ('7','ELIA');
+INSERT INTO EquipeProjets VALUES ('8','OSE');
+INSERT INTO EquipeProjets VALUES ('9','TSF');
+INSERT INTO EquipeProjets VALUES ('10','ISGE');
 
 
 /*Dans Chercheurs*/
@@ -51,65 +51,65 @@ INSERT INTO Chercheurs  VALUES ('chlb34','7470c957b343e15aff2db879af35f1b2','lou
 
 /*Dans Appartenir*/
 /*membre equipe 1*/
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chrl1','1');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chld2','1');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chat4','1');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chmf5','1');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chtj10','1');
+INSERT INTO Appartenir  VALUES ('chrl1','1');
+INSERT INTO Appartenir  VALUES ('chld2','1');
+INSERT INTO Appartenir  VALUES ('chat4','1');
+INSERT INTO Appartenir  VALUES ('chmf5','1');
+INSERT INTO Appartenir  VALUES ('chtj10','1');
 /*membre equipe2*/
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chrl1','2');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chld2','2');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chmf5','2');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chai12','2');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chmm15','2');
+INSERT INTO Appartenir  VALUES ('chrl1','2');
+INSERT INTO Appartenir  VALUES ('chld2','2');
+INSERT INTO Appartenir  VALUES ('chmf5','2');
+INSERT INTO Appartenir  VALUES ('chai12','2');
+INSERT INTO Appartenir  VALUES ('chmm15','2');
 /*membre equipe3*/
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chrl1','3');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chai12','3');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chav16','3');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chap17','3');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chaj18','3');
+INSERT INTO Appartenir  VALUES ('chrl1','3');
+INSERT INTO Appartenir  VALUES ('chai12','3');
+INSERT INTO Appartenir  VALUES ('chav16','3');
+INSERT INTO Appartenir  VALUES ('chap17','3');
+INSERT INTO Appartenir  VALUES ('chaj18','3');
 /*membre equipe4*/
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chld2','4');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chlc9','4');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chap20','4');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chac24','4');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chay26','4');
+INSERT INTO Appartenir  VALUES ('chld2','4');
+INSERT INTO Appartenir  VALUES ('chlc9','4');
+INSERT INTO Appartenir  VALUES ('chap20','4');
+INSERT INTO Appartenir  VALUES ('chac24','4');
+INSERT INTO Appartenir  VALUES ('chay26','4');
 /*membre equipe5*/
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chts3','5');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chta8','5');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chas19','5');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chav21','5');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chld28','5');
+INSERT INTO Appartenir  VALUES ('chts3','5');
+INSERT INTO Appartenir  VALUES ('chta8','5');
+INSERT INTO Appartenir  VALUES ('chas19','5');
+INSERT INTO Appartenir  VALUES ('chav21','5');
+INSERT INTO Appartenir  VALUES ('chld28','5');
 /*membre equipe6*/
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chts3','6');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chaf14','6');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chav21','6');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chah23','6');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chai27','6');
+INSERT INTO Appartenir  VALUES ('chts3','6');
+INSERT INTO Appartenir  VALUES ('chaf14','6');
+INSERT INTO Appartenir  VALUES ('chav21','6');
+INSERT INTO Appartenir  VALUES ('chah23','6');
+INSERT INTO Appartenir  VALUES ('chai27','6');
 /*membre equipe7*/
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chga7','7');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chbc11','7');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chay26','7');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chld28','7');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chal30','7');
+INSERT INTO Appartenir  VALUES ('chga7','7');
+INSERT INTO Appartenir  VALUES ('chbc11','7');
+INSERT INTO Appartenir  VALUES ('chay26','7');
+INSERT INTO Appartenir  VALUES ('chld28','7');
+INSERT INTO Appartenir  VALUES ('chal30','7');
 /*membre equipe8*/
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chts3','8');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chap13','8');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chac25','8');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chai27','8');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chal30','8');
+INSERT INTO Appartenir  VALUES ('chts3','8');
+INSERT INTO Appartenir  VALUES ('chap13','8');
+INSERT INTO Appartenir  VALUES ('chac25','8');
+INSERT INTO Appartenir  VALUES ('chai27','8');
+INSERT INTO Appartenir  VALUES ('chal30','8');
 /*membre equipe9*/
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chat4','9');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chbc11','9');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chap13','9');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chah23','9');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chps29','9');
+INSERT INTO Appartenir  VALUES ('chat4','9');
+INSERT INTO Appartenir  VALUES ('chbc11','9');
+INSERT INTO Appartenir  VALUES ('chap13','9');
+INSERT INTO Appartenir  VALUES ('chah23','9');
+INSERT INTO Appartenir  VALUES ('chps29','9');
 /*membre equipe10*/
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chat4','10');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chas6','10');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chaf14','10');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chag22','10');
-INSERT INTO Appartenir (loginCh, codeEq) VALUES ('chja31','10');
+INSERT INTO Appartenir  VALUES ('chat4','10');
+INSERT INTO Appartenir  VALUES ('chas6','10');
+INSERT INTO Appartenir  VALUES ('chaf14','10');
+INSERT INTO Appartenir  VALUES ('chag22','10');
+INSERT INTO Appartenir  VALUES ('chja31','10');
 
 
 
@@ -182,40 +182,40 @@ INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('23','','
 INSERT INTO publications (codePub, titrePub, typePub, datePub) VALUES ('24','','article','01/05/2017');
 */
 
-INSERT INTO Publier (codePub, loginCh) VALUES ('1','chrl1');
-INSERT INTO Publier (codePub, loginCh) VALUES ('2','chld2');
-INSERT INTO Publier (codePub, loginCh) VALUES ('3','chts3');
-INSERT INTO Publier (codePub, loginCh) VALUES ('4','chat4');
+INSERT INTO Publier VALUES ('1','chrl1');
+INSERT INTO Publier VALUES ('2','chld2');
+INSERT INTO Publier VALUES ('3','chts3');
+INSERT INTO Publier VALUES ('4','chat4');
 
-INSERT INTO Publier (codePub, loginCh) VALUES ('5','chmf5');
-INSERT INTO Publier (codePub, loginCh) VALUES ('6','chas6');
-INSERT INTO Publier (codePub, loginCh) VALUES ('7','chga7');
-INSERT INTO Publier (codePub, loginCh) VALUES ('8','chta8');
+INSERT INTO Publier VALUES ('5','chmf5');
+INSERT INTO Publier VALUES ('6','chas6');
+INSERT INTO Publier VALUES ('7','chga7');
+INSERT INTO Publier VALUES ('8','chta8');
 
-INSERT INTO Publier (codePub, loginCh) VALUES ('9','chtj10');
-INSERT INTO Publier (codePub, loginCh) VALUES ('10','chlc9');
-INSERT INTO Publier (codePub, loginCh) VALUES ('11','chai12');
-INSERT INTO Publier (codePub, loginCh) VALUES ('12','chbc11');
+INSERT INTO Publier VALUES ('9','chtj10');
+INSERT INTO Publier VALUES ('10','chlc9');
+INSERT INTO Publier VALUES ('11','chai12');
+INSERT INTO Publier VALUES ('12','chbc11');
 /*
-INSERT INTO Publier (codePub, loginCh) VALUES ('13','chrl1');
-INSERT INTO Publier (codePub, loginCh) VALUES ('14','chld2');
-INSERT INTO Publier (codePub, loginCh) VALUES ('15','chts3');
-INSERT INTO Publier (codePub, loginCh) VALUES ('16','chat4');
-INSERT INTO Publier (codePub, loginCh) VALUES ('17','chap13');
-INSERT INTO Publier (codePub, loginCh) VALUES ('18','chaf14');
-INSERT INTO Publier (codePub, loginCh) VALUES ('19','chmm15');
-INSERT INTO Publier (codePub, loginCh) VALUES ('20','chav16');
-INSERT INTO Publier (codePub, loginCh) VALUES ('21','chap17');
-INSERT INTO Publier (codePub, loginCh) VALUES ('22','chaj18');
-INSERT INTO Publier (codePub, loginCh) VALUES ('23','chas19');
-INSERT INTO Publier (codePub, loginCh) VALUES ('24','chap20');
+INSERT INTO Publier VALUES ('13','chrl1');
+INSERT INTO Publier VALUES ('14','chld2');
+INSERT INTO Publier VALUES ('15','chts3');
+INSERT INTO Publier VALUES ('16','chat4');
+INSERT INTO Publier VALUES ('17','chap13');
+INSERT INTO Publier VALUES ('18','chaf14');
+INSERT INTO Publier VALUES ('19','chmm15');
+INSERT INTO Publier VALUES ('20','chav16');
+INSERT INTO Publier VALUES ('21','chap17');
+INSERT INTO Publier VALUES ('22','chaj18');
+INSERT INTO Publier VALUES ('23','chas19');
+INSERT INTO Publier VALUES ('24','chap20');
 
 */
 
 
 
-INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubAbo,loginAbo) VALUES ('1','Pouvez vous nous citer des cas d’utilisation de ces systemes?','21/02/2017','5','abgr3');
-INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubAbo,loginAbo) VALUES ('2','Qu’elles sont les protocoles de securite mis en place','21/03/2017','13','abgr3');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubAbo,loginAbo) VALUES ('1','Pouvez vous nous citer des cas d’utilisation de ces systemes?','21/02/2017','12','abgr3');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubAbo,loginAbo) VALUES ('2','Qu’elles sont les protocoles de securite mis en place','21/03/2017','12','abgr3');
 
 /*
 INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh) VALUES ('2','AAAAA','21/02/2017','5','chbc11');
