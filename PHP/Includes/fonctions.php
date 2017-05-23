@@ -316,15 +316,15 @@ function monProfil($login)
         $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
         $row=pg_fetch_array($result);
         echo "<center>";
-        echo "<h4>".strtoupper($row["nomch"])." ".ucfirst($row["prenomch"])."</h4>";
-        echo "Coordonnes<br>";
-        echo "Email : ".$row["mailch"];
-        echo "<br>Téléphone : ".$row["telch"];
+        echo "<b><h3>".strtoupper($row["nomch"])." ".ucfirst($row["prenomch"])."</b></h3>";
+        echo "<h3>Coordonnes</h3>";
+        echo "<b><u>Email</u> : </b>".$row["mailch"];
+        echo "<br><b><u>Téléphone</u> : </b>".$row["telch"];
 
         $requete = "SELECT nomEq FROM EquipeProjets e,Appartenir a WHERE a.loginche='".$login."' and a.codeEq=e.codeEq";
         $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
         $num=pg_numrows($result);
-        echo "<br>Equipes : ";
+        echo "<br><b><u>Equipes</u> : </b>";
         for ($i=0; $i<$num; $i++)
         {
            $row=pg_fetch_array($result);
@@ -437,19 +437,19 @@ function detailProjets($login,$codeprojet)
     $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
        
     $row=pg_fetch_array($result);
-    echo "<br><center>Projet : ".$row["titreprojet"]."<br>";
-    echo "Theme : ".$row["theme"]."<br>";
+    echo "<br><center><b><u>Projet</u> :</b> ".$row["titreprojet"]."<br>";
+    echo "<b><u>Theme</u> :</b> ".$row["theme"]."<br>";
     if ($login==$row["loginchefprojet"])
     {
-        echo "Budget : ".$row["budget"]."<br>";
+        echo "<b><u>Budget</u> :</b> ".$row["budget"]."<br>";
     }
     if ($login!=$row["loginchefprojet"])
     {
-        echo "Chef de projet : ".$row["nomch"]." ".$row["prenomch"]."<br>";
+        echo "<b><u>Chef de projet</u> :</b> ".strtoupper($row["nomch"])." ".ucfirst($row["prenomch"])."<br>";
     }
-    echo "Equipes : ".$row["nomeq"]."<br>";
+    echo "<b><u>Equipes</u> :</b> ".$row["nomeq"]."<br>";
     
-    echo "Membres : ";
+    echo "<b><u>Membres</u> :</b> ";
     $requete="SELECT loginch,nomch, prenomch FROM chercheurs c,appartenir a WHERE c.loginch=a.loginche and codeeq='".$row["codeequ"]."'";
     $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
 
