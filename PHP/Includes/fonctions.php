@@ -321,7 +321,7 @@ function monProfil($login)
         echo "<b><u>Email</u> : </b>".$row["mailch"];
         echo "<br><b><u>Téléphone</u> : </b>".$row["telch"];
 
-        $requete = "SELECT nomEq FROM EquipeProjets e,Appartenir a WHERE a.loginche='".$login."' and a.codeEq=e.codeEq";
+        $requete = "SELECT nomEq FROM EquipeProjets e,Appartenir a WHERE a.loginch='".$login."' and a.codeEq=e.codeEq";
         $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
         $num=pg_numrows($result);
         echo "<br><b><u>Equipes</u> : </b>";
@@ -414,7 +414,7 @@ function voirMesProjets ($login)
 {
     require_once("../Modules/connect.inc.php");
 
-    $requete="SELECT codeprojet,titreProjet FROM projets p, Appartenir a WHERE a.loginche='".$login."' and  a.codeEq=p.codeEqu ";
+    $requete="SELECT codeprojet,titreProjet FROM projets p, Appartenir a WHERE a.loginch='".$login."' and  a.codeEq=p.codeEqu ";
     $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
 
     $num=pg_numrows($result);
@@ -450,7 +450,7 @@ function detailProjets($login,$codeprojet)
     echo "<b><u>Equipes</u> :</b> ".$row["nomeq"]."<br>";
     
     echo "<b><u>Membres</u> :</b> ";
-    $requete="SELECT loginch,nomch, prenomch FROM chercheurs c,appartenir a WHERE c.loginch=a.loginche and codeeq='".$row["codeequ"]."'";
+    $requete="SELECT c.loginch,nomch, prenomch FROM chercheurs c,appartenir a WHERE c.loginch=a.loginch and codeeq='".$row["codeequ"]."'";
     $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
 
     $num=pg_numrows($result);
