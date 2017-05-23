@@ -13,7 +13,7 @@ INSERT INTO EquipeProjets (codeEq, nomEq) VALUES ('9','TSF');
 INSERT INTO EquipeProjets (codeEq, nomEq) VALUES ('10','ISGE');
 
 
-/*Dans ChercheursS*/
+/*Dans Chercheurs*/
 INSERT INTO Chercheurs  VALUES ('chrl1','39df9cf52d3915bbeef6522df4007395','leleivai','rodrigue','rleleivai@pcr.fr','0784409617','true');
 INSERT INTO Chercheurs  VALUES ('chld2','e728b47751c6555942cb60f97d1e4553','ly','dieynaba','lydieynaly@pcr.fr','0758089104','true');
 INSERT INTO Chercheurs  VALUES ('chts3','082e097606d795b8804629490cedd2f1','taillefer','simon','simon.taillefer82@pcr.fr','0666987427','true');

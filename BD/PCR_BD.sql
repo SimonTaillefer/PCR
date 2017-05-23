@@ -70,9 +70,9 @@ CREATE TABLE Fichiers (
 );
 
 CREATE TABLE Appartenir (
-	loginChe varchar(255),
+	loginCh varchar(255),
 	codeEq varchar(255),
-	CONSTRAINT FK_App_Ch FOREIGN KEY (loginChe) REFERENCES Chercheurs (loginCh),
+	CONSTRAINT FK_App_Ch FOREIGN KEY (loginCh) REFERENCES Chercheurs (loginCh),
 	CONSTRAINT FK_App_Eq FOREIGN KEY (codeEq) REFERENCES EquipeProjets(codeEq)
 );
 
