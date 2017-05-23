@@ -21,7 +21,7 @@
 					echo '<li class="dropdown">';
 					echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projets <span class="caret"></span></a>';
 					echo '<ul class="dropdown-menu">';
-					echo '<li><a href="creationProjet.php">Creer Projets</a></li>';
+					echo '<li><a href="/PCR/PHP/Pages/creationProjet.php">Creer Projets</a></li>';
 					echo '<li><a href="/PCR/PHP/Pages/mesProjets.php">Voir mes Projets</a></li>';
 			  //<li><a href="#">Relation entreprise</a></li>
 			  //<li><a href="#">Mot du directeur</a></li>
