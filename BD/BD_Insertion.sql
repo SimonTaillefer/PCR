@@ -210,38 +210,40 @@ INSERT INTO Publier (codePub, loginCh) VALUES ('24','chap20');
 
 
 
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('1','AAAAA','21/02/2017','13','chbc11','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('2','CCCCCCCCC','21/02/2017','','','13','abgr3');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('3','BBBBBBBBB','21/02/2017','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('4','DDDDDDDDD','21/02/2017','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('5','QQQQQQQQQQQ','21/02/2017','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('6','KKKKKKKKKKKKK','21/02/2017','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('7','MMMMMMM','21/02/2017','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('8','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('9','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('10','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('11','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('12','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('13','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('15','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('16','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('17','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
-INSERT INTO Commentaire (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh) VALUES ('1','AAAAA','21/02/2017','13','chbc11');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubAbo,loginAbo) VALUES ('2','CCCCCCCCC','21/02/2017','13','abgr3');
+
+
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('3','BBBBBBBBB','21/02/2017','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('4','DDDDDDDDD','21/02/2017','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('5','QQQQQQQQQQQ','21/02/2017','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('6','KKKKKKKKKKKKK','21/02/2017','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('7','MMMMMMM','21/02/2017','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('8','','','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('9','','','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('10','','','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('11','','','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('12','','','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('13','','','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('15','','','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('16','','','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('17','','','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
+INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh, codePubAbo,loginAbo) VALUES ('','','','','','','');
 
 
 

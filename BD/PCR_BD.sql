@@ -96,3 +96,7 @@ CREATE TABLE Commentaires (
 	CONSTRAINT FK_Com_Pub_Abo FOREIGN KEY (codePubAbo) REFERENCES Publications(codePub),
 	CONSTRAINT FK_Com_Abo FOREIGN KEY (loginAbo) REFERENCES Abonnes (loginAbo)
 );
+
+
+/*Ajout cle primaire table commentaire*/
+ALTER TABLE commentaires ADD CONSTRAINT pk_com PRIMARY KEY (codeCom);

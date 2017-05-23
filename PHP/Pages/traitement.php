@@ -25,7 +25,18 @@ elseif (isset($_POST["nouveau_mot_de_passe"]))
 }
 elseif (isset($_POST["enregistrer"])) 
 {
-	ajouterPublication($_POST["typepub"],$_POST["titrepub"],$_POST["contenupub"],date("d/m/Y"));
+	ajouterPublication($_POST["titrepub"],$_POST["typepub"],$_POST["contenupub"],date("d/m/Y"));
+}
+elseif (isset($_POST["ajouterCommentaire"])) 
+{
+	if (isset($_SESSION["loginab"]))
+    {
+		commenterPublication($_SESSION["loginab"],$_POST["contenucommentaire"],date("d/m/Y"),$_POST["codepubAfficher"]);
+	}
+	elseif (isset($_SESSION["loginch"])) 
+	{
+		commenterPublication($_SESSION["loginch"],$_POST["contenucommentaire"],date("d/m/Y"),$_POST["codepubAfficher"]);
+	}
 }
 
 ?>

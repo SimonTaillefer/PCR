@@ -12,11 +12,10 @@ function afficherPublicationsChercheurs()
     {
         $row=pg_fetch_array($result);
         echo "<br>";
-        echo $row["typepub"]."<br>";
-        echo '<a href="/PCR/PHP/Pages/contenuPub.php" role="button" name="titrepubAfficher">'.$row["titrepub"]."</a><br>";
+        echo "<h4><i>".ucfirst($row["typepub"])."</i></h4>";
+        echo '<a href="/PCR/PHP/Pages/contenuPub.php?titrepubAfficher='.$row["titrepub"].'&codepubAfficher='.$num.'"  type="submit" name="titrepubAfficher">'.$row["titrepub"]."</a><br>";
         echo $row["datepub"]."<br>";
-        echo $row["nomch"]." ".$row["prenomch"]."<br><br>";
-
+        echo "<i>".strtoupper($row["nomch"])." ".ucfirst($row["prenomch"])."</i><br><br>";
     }
 }
 
@@ -25,7 +24,7 @@ function afficherPublications()
 {
     require_once("../Modules/connect.inc.php");
 
-    $requete="SELECT titrepub, typepub, datepub,nomch,prenomch FROM publications p, publier pu, chercheurs ch WHERE p.codepub=pu.codepub AND pu.loginch=ch.loginch AND typePub='article'";
+    $requete="SELECT titrepub, typepub, datepub,nomch,prenomch FROM publications p, publier pu, chercheurs ch WHERE p.codepub=pu.codepub AND pu.loginch=ch.loginch AND typePub='article' ORDER BY datepub";
     $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
     $num=pg_num_rows($result);
 
@@ -33,21 +32,24 @@ function afficherPublications()
     {
         $row=pg_fetch_array($result);
         echo "<br>";
-        echo $row["typepub"]."<br>";
-        echo '<a href="/PCR/PHP/Pages/contenuPub.php" role="button" name="titrepubAfficher">'.$row["titrepub"]."</a><br>";
+        echo "<h4><i>".ucfirst($row["typepub"])."</i></h4>";
+        echo '<a href="/PCR/PHP/Pages/contenuPub.php?titrepubAfficher='.$row["titrepub"].'"  type="submit" name="titrepubAfficher">'.$row["titrepub"]."</a><br>";
         echo $row["datepub"]."<br>";
-        echo $row["nomch"]." ".$row["prenomch"]."<br><br>";
+        echo "<i>".strtoupper($row["nomch"])." ".ucfirst($row["prenomch"])."</i><br><br>";
     }
 }
 
-function afficherContenuPub ()
-{
 
-}
 
 function ajouterPublication($titre,$type,$contenu,$date)
 {
     require_once("../Modules/connect.inc.php");
+
+    $monfichier = fopen("../../Fichiers/".$titre.".txt", 'a+');
+ 
+    fputs($monfichier,"$contenu"); 
+ 
+    fclose($monfichier);
 
     $requete='SELECT * FROM publications';
     $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
@@ -55,18 +57,75 @@ function ajouterPublication($titre,$type,$contenu,$date)
 
     $num=$num+1;
     $requete="INSERT INTO publications VALUES('".$num."','".$titre."','".$type."','".$date."')";
+    $requete1="INSERT INTO publier VALUES('".$num."','".$_SESSION["loginch"]."')";
     $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+    $result = pg_exec($dbconn,$requete1) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
 
     header("location: publications.php");   
 }
 
-function commenterPublication ()
+
+function afficherContenuPub($titre,$codepub)
+{
+    require_once("../Modules/connect.inc.php");
+
+    echo "<h3>".$titre."</h3>";
+    $monfichier = fopen("../../Fichiers/".$titre.".txt", 'a+');
+    
+    while (!feof($monfichier)) 
+    {
+        $line=fgets($monfichier);
+        echo  $line."<br />";
+    }
+    fclose($monfichier);
+
+    echo "<br><br><h3>Commentaires</h3>";
+
+    $requete="SELECT contenucom,datecom,nomch,prenomch FROM commentaires c,chercheurs ch WHERE c.codepubch='".$codepub."' AND c.loginch=ch.loginch";
+    $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+    $requete1="SELECT contenucom,datecom,nomabo,prenomabo FROM commentaires c,abonnes a WHERE c.codePubAbo='".$codepub."' AND c.loginAbo=a.loginAbo";
+    $result1 = pg_exec($dbconn,$requete1) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+
+    $num=pg_num_rows($result);
+    $num1=pg_num_rows($result1);
+
+    for ($i=0; $i<$num; $i++) 
+    {
+        $row=pg_fetch_array($result);
+        echo $row["nomch"]." ".$row["prenomch"]."<br>";
+        echo $row["datecom"]."<br>";
+        echo $row["contenucom"]."<br>";
+    }
+    for ($i=0; $i<$num1; $i++) 
+    {
+        $row=pg_fetch_array($result1);
+        echo $row["nomabo"]." ".$row["prenomabo"]."<br>";
+        echo $row["datecom"]."<br>";
+        echo $row["contenucom"]."<br>";
+    }
+}
+
+
+function commenterPublication ($login,$contenu,$datepub,$codepub)
 {
     require_once("../Modules/connect.inc.php");
 
     $requete='SELECT * FROM commentaires';
     $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
     $num=pg_num_rows($result);
+
+    $num=$num+1;
+
+    if ((substr($login, 0, 2))==='ch')
+    {
+        $requete="INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh) VALUES ('".$num."','".$contenu."','".$datepub."','".$codepub."','".$login."')";
+        header("location: publications.php");
+    }
+    else
+    {
+        $requete="INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubAbo,loginAbo)  VALUES ('".$num."','".$contenu."','".$datepub."','".$codepub."','".$login."')";
+        header("location: publications.php");
+    }
 }
 
 function connexion ($login,$password)
