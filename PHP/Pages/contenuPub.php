@@ -19,7 +19,7 @@
         	</h2>
 
           <?php include '../Includes/fonctions.php';            
-            afficherContenuPub($_GET["titrepubAfficher"],$_GET["codepubAfficher"]);
+            afficherContenuPub($_GET["codepubAfficher"]);
          
 
           echo '<form action="traitement.php" method="post">';
@@ -28,7 +28,7 @@
               echo '<input type="hidden" value="'.$_GET["codepubAfficher"].'" name="codepubAfficher"> ';
               echo '<input type="submit" value="Envoyer" name="ajouterCommentaire">';
           echo '</form >';
-           ?>
+          ?>
         </div>
     
         <?php include('../Includes/footer.php'); ?>

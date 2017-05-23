@@ -1,0 +1,17 @@
+Traditionnellement, dans le domaine avionique les logiciels utilisés à bord de l'avion sont totalement séparés 
+des logiciels utilisés au dehors afin d'éviter toutes interaction qui pourrait corrompre les systèmes critiques 
+à bord de l'avion. Cependant, les nouvelles générations d'avions exigent plus d'interactions avec le monde ouvert 
+avec pour objectif de proposer des services étendu, générant ainsi un flux d'information potentiellement 
+dan- gereux. Dans une précédente étude, nous avons proposé l'utilisation de la virtualisation pour assurer la 
+sûreté de fonctionnement d'applications critiques assurant des communi- cations bidirectionnelles entre systèmes 
+critiques et systèmes non sûr. Dans cette thèse nous proposons deux contributions. La première contribution 
+propose une méthode de comparaison d'hyperviseur. Nous avons développé un banc de test permettant de mesurer les 
+performances d'un système virtualisé. Dans cette étude, différentes configurations ont été expérimentées, d'un 
+système sans OS à une architecture complète avec un hyperviseur et un OS s'exécutant dans une machine virtuelle. 
+Plusieurs tests (processeur, mémoire et réseaux) ont été mesurés et collectés sur différents hyperviseurs. 
+La seconde contribution met l'accent sur l'amélioration d'une architecture de sécurité existante. Un mécanisme de 
+comparaison basé sur l'analyse des traces d'exécution est utilisé pour détecter les anomalies entre instances 
+d'application exécutées sur diverse ma- chines virtuelles. Nous proposons de renforcer le mécanisme de comparaison 
+à l'exécution par l'utilisation d'un modèle d'exécution issu d'une analyse statique du bytecode Java. 
+Afin de valider notre approche, nous avons développé un prototype basé sur un cas d'étude identifié avec Airbus 
+qui porte sur l'utilisation d'un ordinateur portable dédié à la maintenance.

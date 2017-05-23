@@ -1,0 +1,9 @@
+Les systèmes autonomes suscitent aujourd'hui un intérêt croissant, que ce soit dans le domaine des robots 
+d'exploration spatiale ou dans des domaines plus proches de l'homme, tels que les robots de service. Mais se pose 
+le problème de leur sûreté de fonctionnement : peut-on avoir une confiance justifiée dans le comportement de 
+systèmes conçus pour prendre des décisions sans intervention humaine? 
+L'objectif de cette thèse est de proposer des concepts architecturaux capables d'améliorer la sûreté de 
+fonctionnement des systèmes autonomes, en particulier par la conception et le développement de mécanismes de 
+tolérance aux fautes adaptés à la fonction de planification, centrale à l'autonomie des systèmes complexes. 
+Une évaluation des performances et de l'efficacité des mécanismes proposés est réalisée en utilisant la technique 
+d'injection de fautes par mutation.

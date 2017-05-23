@@ -1,0 +1,19 @@
+Dans ce travail, nous avons étudié le mécanisme d'émission de la partie optiquement active du complexe 
+luciférine-luciférase. Ce système bioluminescent est largement utilisé dans un très grand nombre d'approches 
+bioanalytiques. Ce phénomène naturel résulte en l'émission de lumière visible (vert-jaune-rouge) à partir du 
+photoproduit : l’oxyluciférine. Une des hypothèses couramment admise pour expliquer le mécanisme d’émission de 
+l’oxyluciféreine fait intervenir un équilibre complexe entre six espèces chimiques, mais le détail exact du 
+mécanisme reste à élucider. Les principales conclusions présentées ici repose sur l'identification des six formes 
+chimiques de l’oxyluciférine impliquées dans le mécanisme d'émission de fluorescence et la caractérisation d’un 
+point de vu dynamique du transfert de proton à l’état excité. Ces résultats ont été obtenus par l'étude des 
+propriétés optiques de différents analogues structuraux de l’oxyluciférine dans un tampon aqueux. 
+Différent techniques de spectroscopie (état stable et résolue en temps) et des approches chimiométriques ont été 
+appliquées pour étudier ce mécanisme d'émission. En outre, les propriétés photophysiques de l’oxyluciférine en 
+complexe avec l'enzyme luciférase (Luciola cruciata) ont été étudiées également en milieu aqueux. 
+En parallèle, les dérivés présentant des propriétés d’émission sensibles à l’environnement ont été utilisés pour 
+visualiser l'interaction entre biomolécules. En particulier, nous avons démontré que l’oxyluciférine peut être 
+utilisée pour cartographier le pH intracellulaire à l'aide de la microscopie de fluorescence dans des cellules 
+vivantes. Avec l'aide d'un autre dérivé de l'oxyluciférine nous avons été en mesure de caractériser l'interaction 
+entre une protéine du VIH-1 et des séquences d'oligonucléotide au moyen de mesures ratiométriques. 
+Enfin, nous avons développé une approche basée sur le marquage de résidus cystéine pour suivre, in vitro, 
+l'interaction protéine-protéine.

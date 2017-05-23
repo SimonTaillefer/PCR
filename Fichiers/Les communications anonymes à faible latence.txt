@@ -1,0 +1,13 @@
+Dans ce mémoire nous proposons des systèmes de communication anonyme à faible latence. Pour cela nous étudions 
+les performances des systèmes basés sur les primitives classiques : envoi superposé ou bourrage chiffré pour 
+l'émission, et diffusion avec adressage implicite pour la réception, quand les groupes d'utilisateurs potentiels 
+sont contraints à être de petite taille, peu changeants, ou localisés. Nous proposons l'utilisation des protocoles
+de récupération d'informations privée (ou protocoles PIR pour Private Information Retrieval) comme alternative à 
+la diffusion avec adressage implicite, et nous étudions les systèmes en résultant. Ces systèmes permettent de 
+réduire significativement le coût des communications, au prix d'un coût calculatoire important. Au moyen 
+d'exemples, nous montrons que ces nouvelles solutions offrent un meilleur choix dans certaines situations, 
+notamment pour les utilisateurs connectés au service par Internet. Dans un deuxième temps, nous mettons en avant 
+les relations entre les différentes techniques et montrons que les systèmes basés sur les primitives classiques 
+ne sont en fait que des instances d'une famille qui, par l'utilisation de la récupération d'informations privée, 
+devient nombreuse et polyvalente. Ainsi, on dispose de beaucoup plus de degrés de liberté pour l'implémentation de
+solutions fournissant des communications anonymes dans le cadre des groupes d'utilisateurs sous contraintes.

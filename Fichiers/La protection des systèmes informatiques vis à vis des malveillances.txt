@@ -1,0 +1,9 @@
+La sécurité des systèmes informatiques répartis est un problème de plus en plus important, en particulier 
+avec l'utilisation massive du réseau Internet. Il est donc essentiel de pouvoir imaginer des techniques de 
+protection efficaces de nos systèmes et de nos réseaux. Ces travaux proposent une contribution à la protection 
+des systèmes informatiques vis-a-vis des malveillances, en abordant le problème sous deux angles : un angle 
+architectural et un angle expérimental. L'angle architectural concerne la conception d'architectures de sécurité 
+permettant de faire face aux menaces actuelles, en proposant plusieurs approches suivies dans la cadre de 
+différentes thèses. L'angle expérimental se focalise sur des techniques permettant d'améliorer notre connaissance 
+des attaquants et des processus d'attaques, en particulier, les processus qui utilisent le réseau Internet comme 
+support.
