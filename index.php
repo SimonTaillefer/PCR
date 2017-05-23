@@ -13,7 +13,7 @@
       <!-- Static navbar -->
       <?php include('PHP/Includes/nav.php'); ?>
       <div id="contenu">
-        <h1><center>Accueil</center></h1>
+        <h1><center><br>Accueil</center></h1><legend></legend>
         <center><img src="PHP/Includes/image1.php"/></center>
         <center><img id="img_accueil" src="/PCR/Multimedias/Images/image_accueil.jpg" alt="l'image d'accueil"></center>
         <br>
