@@ -19,10 +19,10 @@ if (!isset($_SESSION["loginch"]))
 
       <div id="contenu">
         <h1>
-          <center><br>Liste des Projets</center><legend></legend>
+          <center><br>Membre equipe</center><legend></legend>
         </h1>
         <?php include '../Includes/fonctions.php';
-          listeProjets();
+          membreEquipe($_GET["codeeqAfficher"]);
         ?>
        </div>
       <?php include('../Includes/footer.php'); ?>
