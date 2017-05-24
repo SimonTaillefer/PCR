@@ -196,6 +196,7 @@ INSERT INTO Publier VALUES ('9','chtj10');
 INSERT INTO Publier VALUES ('10','chlc9');
 INSERT INTO Publier VALUES ('11','chai12');
 INSERT INTO Publier VALUES ('12','chbc11');
+
 /*
 INSERT INTO Publier VALUES ('13','chrl1');
 INSERT INTO Publier VALUES ('14','chld2');

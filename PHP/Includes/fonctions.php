@@ -81,7 +81,7 @@ function afficherContenuPub($codepub)
     $row=pg_fetch_array($result);
     $titre=$row["titrepub"];
 
-    echo "<h3>".$titre."</h3>";
+    echo "<center><h3>".$titre."</h3>";
 
     $monfichier = fopen("../../Fichiers/".$titre.".txt", 'a+');
     
@@ -92,7 +92,7 @@ function afficherContenuPub($codepub)
     }
     fclose($monfichier);
 
-    echo "<br><br><h3>Commentaires</h3>";
+    echo "</center><br><br><h3>Commentaires</h3>";
 
     $requete="SELECT contenucom,datecom,nomch,prenomch FROM commentaires c,chercheurs ch WHERE c.codepubch='".$codepub."' AND c.loginch=ch.loginch ";
     $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());

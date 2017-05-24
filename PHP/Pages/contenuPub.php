@@ -14,9 +14,9 @@
         <?php include('../Includes/nav.php'); ?>
         
         <div id="contenu">
-      		<h2>
-          		<center>  Publication contenu</center>
-        	</h2>
+      		<h1>
+          		<center><br>  Publication contenu</center><legend></legend>
+        	</h1>
 
           <?php include '../Includes/fonctions.php';            
             afficherContenuPub($_GET["codepubAfficher"]);
