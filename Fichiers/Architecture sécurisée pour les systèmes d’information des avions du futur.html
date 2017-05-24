@@ -5,23 +5,7 @@
 </head>
 <body>
 <p>
-Traditionnellement, dans le domaine avionique les logiciels utilisÈs ‡ bord de l'avion sont totalement sÈparÈs 
-des logiciels utilisÈs au dehors afin d'Èviter toutes interaction qui pourrait corrompre les systËmes critiques 
-‡ bord de l'avion. Cependant, les nouvelles gÈnÈrations d'avions exigent plus d'interactions avec le monde ouvert 
-avec pour objectif de proposer des services Ètendu, gÈnÈrant ainsi un flux d'information potentiellement 
-dan- gereux. Dans une prÈcÈdente Ètude, nous avons proposÈ l'utilisation de la virtualisation pour assurer la 
-s˚retÈ de fonctionnement d'applications critiques assurant des communi- cations bidirectionnelles entre systËmes 
-critiques et systËmes non s˚r. Dans cette thËse nous proposons deux contributions. La premiËre contribution 
-propose une mÈthode de comparaison d'hyperviseur. Nous avons dÈveloppÈ un banc de test permettant de mesurer les 
-performances d'un systËme virtualisÈ. Dans cette Ètude, diffÈrentes configurations ont ÈtÈ expÈrimentÈes, d'un 
-systËme sans OS ‡ une architecture complËte avec un hyperviseur et un OS s'exÈcutant dans une machine virtuelle. 
-Plusieurs tests (processeur, mÈmoire et rÈseaux) ont ÈtÈ mesurÈs et collectÈs sur diffÈrents hyperviseurs. 
-La seconde contribution met l'accent sur l'amÈlioration d'une architecture de sÈcuritÈ existante. Un mÈcanisme de 
-comparaison basÈ sur l'analyse des traces d'exÈcution est utilisÈ pour dÈtecter les anomalies entre instances 
-d'application exÈcutÈes sur diverse ma- chines virtuelles. Nous proposons de renforcer le mÈcanisme de comparaison 
-‡ l'exÈcution par l'utilisation d'un modËle d'exÈcution issu d'une analyse statique du bytecode Java. 
-Afin de valider notre approche, nous avons dÈveloppÈ un prototype basÈ sur un cas d'Ètude identifiÈ avec Airbus 
-qui porte sur l'utilisation d'un ordinateur portable dÈdiÈ ‡ la maintenance.
+Ces travaux de thèse portent sur la sécurité des communications entre applications de niveaux de criticité différents susceptibles d'interagir dans le cadre de l'industrie aéronautique. Plus particulièrement, nous proposons une architecture pour permettre de connecter des ordinateurs portables du commerce aux systèmes de bord des avions, pour faciliter la maintenance (PMAT, Portable Maintenance Access Terminal). Ce portable est conçu sur la base de composants du grand public aussi, la confiance que les systèmes embarqués peuvent placer en ce portable est limitée. Pourtant il doit être connecté à des équipements de bord critiques. Il faut donc appliquer des techniques de tolérance aux fautes particulièrement efficaces. Cette architecture repose sur des mécanismes de redondance et de diversification. Afin de permettre la mise en place de tels mécanismes sur une seule machine, la technologie de virtualisation est utilisée. Ainsi notre architecture met en jeu un hyperviseur de confiance capable d'accueillir des machines virtuelles avec des OS diversifiés (ex. MS-Windows et Linux), une application de maintenance (développée en Java par l'avionneur) étant exécutée en parallèle dans les deux machines virtuelles. Les entrées (venant de l'avion ou du clavier/souris) sont répliquées vers les deux machines virtuelles. Les sorties des deux exécutions (commandes vers l'avion, affichage sur l'écran, etc.) sont comparées par l'hyperviseur avant d'être transmises aux systèmes embarqués. En cas de divergence cet hyperviseur bloque l'exécution. Les principales contributions portent sur une vérification à l'exécution d'un modèle d'exécution généré automatiquement au chargement de l'application, et sur une évaluation d'hyperviseurs afin d'identifier le plus adapté à l'architecture.
 </p>
 </body>
 </html>
