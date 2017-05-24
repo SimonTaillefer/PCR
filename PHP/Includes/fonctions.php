@@ -466,7 +466,7 @@ function detailProjets($login,$codeprojet)
         echo '<a href=infoChercheur.php?loginChAfficher='.$row["loginch"].'>'.strtoupper($row["nomch"])." ".ucfirst($row["prenomch"])."</a><br>";
     }
 
-    echo "<br><br><b><u>Fichiers</u> :</b> ";
+    echo "<br><br><b><u>Fichiers</u> :</b><br> ";
     $requete="SELECT codefich, nomfich FROM projets p,fichiers f WHERE p.codeprojet=f.codeprojet and p.codeprojet='".$codeprojet."'";
     $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
 
@@ -478,6 +478,16 @@ function detailProjets($login,$codeprojet)
     }
     echo "</center>";
     pg_close($dbconn);
+}
+
+function ajoutFichier($index,$tmpName,$taille,$error,$destination,$maxsize=FALSE)
+{
+   //Test1: fichier correctement uploadé
+     if (!isset($index) OR $error > 0) return FALSE;
+   //Test2: taille limite
+     if ($maxsize !== FALSE AND $taille > $maxsize) return FALSE;
+   //Déplacement
+     return move_uploaded_file($tmpName,$destination);
 }
 
 function checkedSelect( $nom, $structure, $contenu, $selection = null) 

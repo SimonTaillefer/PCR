@@ -213,6 +213,10 @@ INSERT INTO Publier VALUES ('24','chap20');
 
 */
 
+INSERT INTO fichiers VALUES('1','Modelisation_pour_la_prediction_de_la_robustesse_fonctionnelle_des_circuits_integres_soumis_a_des_agressions_electriques_transitoires.txt','prpcr5');
+INSERT INTO fichiers VALUES('2','Vers_une_informatique_plus_sure_et_plus_resiliente.docx','prpcr5');
+INSERT INTO fichiers VALUES ('3','Tolerance_aux_fautes_et_Surete_de_Fonctionnement_Informatique.pdf','prpcr1');
+
 
 
 INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubAbo,loginAbo) VALUES ('1','Pouvez vous nous citer des cas d’utilisation de ces systemes?','21/02/2017','12','abgr3');

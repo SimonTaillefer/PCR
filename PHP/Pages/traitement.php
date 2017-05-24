@@ -38,4 +38,30 @@ elseif (isset($_POST["ajouterCommentaire"]))
 		commenterPublication($_SESSION["loginch"],$_POST["contenucommentaire"],date("d/m/Y"),$_POST["codepubAfficher"]);
 	}
 }
+elseif (isset($_POST["ajouter_fich"])) {
+	/*ajoutFichier($_FILES['nom_fich'],$_FILES['nom_fich']['tmp_name'],$_FILES['nom_fich']['size'],$_FILES['nom_fich']['error'],'/PCR/Fichiers/'.$_FILES['nom_fich']['name'],10000);
+	*/
+	$content_dir = '/PCR/Fichiers/'; // dossier où sera déplacé le fichier
+
+    $tmp_file = $_FILES['fichier']['tmp_name'];
+
+    if( !is_uploaded_file($tmp_file) )
+    {
+        header("Location: /PCR/index.php");
+    }
+
+    // on copie le fichier dans le dossier de destination
+    $name_file = $_FILES['fichier']['name'];
+
+    if( !move_uploaded_file($tmp_file, $content_dir . $name_file) )
+    {
+        header("Location: /PCR/index.php");
+    }
+
+    header("Location: /PCR/PHP/Pages/mesProjets.php");
+}
+else
+{
+	header("Location: /PCR/index.php");
+}
 ?>
