@@ -449,7 +449,7 @@ function detailProjets($login,$codeprojet)
     }
     echo "<b><u>Equipes</u> :</b> ".$row["nomeq"]."<br>";
     
-    echo "<b><u>Membres</u> :</b> ";
+    echo "<br><b><u>Membres</u> :</b> ";
     $requete="SELECT c.loginch,nomch, prenomch FROM chercheurs c,appartenir a WHERE c.loginch=a.loginch and codeeq='".$row["codeequ"]."'";
     $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
 
@@ -459,15 +459,25 @@ function detailProjets($login,$codeprojet)
         $row=pg_fetch_array($result);
         echo '<a href=infoChercheur.php?loginChAfficher='.$row["loginch"].'>'.strtoupper($row["nomch"])." ".ucfirst($row["prenomch"])."</a><br>";
     }
+
+    echo "<br><br><b><u>Fichiers</u> :</b> ";
+    $requete="SELECT codefich, nomfich FROM projets p,fichiers f WHERE p.codeprojet=f.codeprojet and p.codeprojet='".$codeprojet."'";
+    $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+
+    $num=pg_numrows($result);
+    for ($i=0; $i<$num; $i++)
+    {
+        $row=pg_fetch_array($result);
+        echo '<a href=/PCR/Fichiers/'.$row["nomfich"].' onclick="window.open(this.href); return false;">'.$row["nomfich"]." </a><a href='../Modules/telecharger.php?situation=/PCR/Fichiers/".$row['nomfich']."'> <span class='glyphicon glyphicon-download'></span></a><br>";
+    }
     echo "</center>";
     pg_close($dbconn);
 }
 
-
 function checkedSelect( $nom, $structure, $contenu, $selection = null) 
 {
 
-          //////////////// entete du composant \\\\\\\\\\\\\\\\\\\\\\\\\        
+  //////////////// entete du composant \\\\\\\\\\\\\\\\\\\\\\\\\        
   if(sizeof($selection) == sizeof($contenu))
     $checked = "checked";
 else
