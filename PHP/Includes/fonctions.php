@@ -51,7 +51,7 @@ function ajouterPublication($titre,$type,$contenu,$date)
 {
     require_once("../Modules/connect.inc.php");
 
-    $monfichier = fopen("../../Fichiers/".$titre.".txt", 'a+');
+    $monfichier = fopen("../../Fichiers/".$titre.".html", 'a+');
 
     fputs($monfichier,"$contenu"); 
 
@@ -83,7 +83,7 @@ function afficherContenuPub($codepub)
 
     echo "<center><h3>".$titre."</h3>";
 
-    $monfichier = fopen("../../Fichiers/".$titre.".txt", 'a+');
+    $monfichier = fopen("../../Fichiers/".$titre.".html", 'a+');
     
     while (!feof($monfichier)) 
     {
@@ -409,6 +409,12 @@ function creerProjet($login,$titre,$theme,$budget,$date,$description,$codeEq)
     pg_close($dbconn);
 }
 
+function listeProjets()
+{
+    require_once("../Modules/connect.inc.php");
+
+    $requete="SELECT titreprojet,theme,descriptions,nomch,prenomch FROM projets p,chercheurs ch, appartenir a WHERE a.";
+}
 
 function voirMesProjets ($login)
 {

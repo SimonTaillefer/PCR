@@ -43,12 +43,13 @@ if (!isset($_SESSION["loginch"]))
 
             $titre = htmlspecialchars($_POST['titre_projet']);
             $theme = htmlspecialchars($_POST['theme_projet']);
+            $budget = htmlspecialchars($_POST['budget_projet']);
             $description = "";
 
             if(isset($_POST['description_projet']))
               $description = htmlspecialchars($_POST['description_projet']);
 
-            creerProjet($_SESSION['loginch'],$titre,$theme,0,date("d/m/Y"),$description,$numEq);
+            creerProjet($_SESSION['loginch'],$titre,$theme,$budget,date("d/m/Y"),$description,$numEq);
 
             header('Location: /PCR/PHP/Pages/mesProjets.php');
           }
@@ -75,6 +76,10 @@ if (!isset($_SESSION["loginch"]))
                 <br>
                 <label>Theme du projet </label><br>
                 <input type="text" name="theme_projet">
+                <br>
+                <br>
+                <label>Budget du projet </label><br>
+                <input type="text" name="budget_projet">
                 <br>
                 <br>
                 <label>Description </label><br>

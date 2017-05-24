@@ -23,7 +23,7 @@
 					echo '<ul class="dropdown-menu">';
 					echo '<li><a href="/PCR/PHP/Pages/creationProjet.php">Creer Projets</a></li>';
 					echo '<li><a href="/PCR/PHP/Pages/mesProjets.php">Voir mes Projets</a></li>';
-			  //<li><a href="#">Relation entreprise</a></li>
+			  		echo '<li><a href="/PCR/PHP/Pages/listeProjets.php">Tous les projets</a></li>';
 			  //<li><a href="#">Mot du directeur</a></li>
 					echo "</ul>";
 					echo "</li>";
