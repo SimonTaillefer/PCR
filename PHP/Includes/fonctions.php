@@ -219,7 +219,7 @@ function inscription_chercheurs ($nom,$prenom,$mail,$tel,$password,$actif)
 }
 
 
-function inscription_abonnes($nom,$prenom,$mail,$password,$actif)
+function inscription_abonnes($nom,$prenom,$mail,$tel,$password,$actif)
 {
 		//connexion et selection de la base de donnees
   require_once("../Modules/connect.inc.php");
@@ -229,10 +229,10 @@ function inscription_abonnes($nom,$prenom,$mail,$password,$actif)
   $num=pg_num_rows($result);
   $num=$num+1;
 
-  $login="ab".substr($_POST["prenom"], 0, 1).substr($_POST["nom"], 0, 1).$num;
+  $login="ab".substr($nom, 0, 1).substr($prenom, 0, 1).$num;
   $password=md5($password);
 
-  $requete2="INSERT INTO abonnes VALUES('".$login."','".$password."','".$nom."','".$prenom."','".$mail."','".$actif."')";
+  $requete2="INSERT INTO abonnes VALUES('".$login."','".$password."','".$nom."','".$prenom."','".$mail."','".$tel."','".$actif."')";
   pg_exec($dbconn,$requete2) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
 
   pg_close($dbconn);
@@ -349,7 +349,7 @@ function monProfil($login)
 
 function selectionEquipe()
 {
-    require_once("../Modules/connect.inc.php");
+    include("../Modules/connect.inc.php");
 
     $requete = "SELECT nomch, prenomch, loginch FROM chercheurs ORDER BY nomch";
     $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());

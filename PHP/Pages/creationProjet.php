@@ -51,10 +51,10 @@ if (!isset($_SESSION["loginch"]))
 
             creerProjet($_SESSION['loginch'],$titre,$theme,$budget,date("d/m/Y"),$description,$numEq);
 
-            header('Location: /PCR/PHP/Pages/mesProjets.php');
+            //header('Location: /PCR/PHP/Pages/mesProjets.php');
           }
           else {
-            header('Location: /PCR/PHP/Pages/creationProjet.php');
+            header('Location: /PCR/PHP/Pages/mesProjets.php');
           }
         }
         ?>

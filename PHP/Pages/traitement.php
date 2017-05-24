@@ -16,7 +16,8 @@ elseif (isset($_POST['creercompte']))
 	}
 	elseif (($_POST["utilisateur"])=="abonne") 
 	{
-		$_SESSION["loginab"]=inscription_abonnes ($_POST["nom"],$_POST["prenom"],$_POST["email"],$_POST["motdepasse"],"FALSE");
+		$_SESSION["loginab"]=inscription_abonnes ($_POST["nom"],$_POST["prenom"],$_POST["email"],$_POST["tel"],$_POST["motdepasse"],"FALSE");
+		header("Location: loginChercheur.php");
 	}
 }
 elseif (isset($_POST["nouveau_mot_de_passe"])) 
@@ -37,6 +38,10 @@ elseif (isset($_POST["ajouterCommentaire"]))
 	{
 		commenterPublication($_SESSION["loginch"],$_POST["contenucommentaire"],date("d/m/Y"),$_POST["codepubAfficher"]);
 	}
+	else
+	{
+		header("Location: /PCR/index.php");
+	}
 }
 elseif (isset($_POST["ajouter_fich"])) {
 	/*ajoutFichier($_FILES['nom_fich'],$_FILES['nom_fich']['tmp_name'],$_FILES['nom_fich']['size'],$_FILES['nom_fich']['error'],'/PCR/Fichiers/'.$_FILES['nom_fich']['name'],10000);
@@ -53,7 +58,7 @@ elseif (isset($_POST["ajouter_fich"])) {
     // on copie le fichier dans le dossier de destination
     $name_file = $_FILES['fichier']['name'];
 
-    if( !move_uploaded_file($tmp_file, $content_dir . $name_file) )
+    if( !move_uploaded_file($tmp_file, $content_dir . $name_file))
     {
         header("Location: /PCR/index.php");
     }
