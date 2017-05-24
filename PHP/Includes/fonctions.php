@@ -413,7 +413,48 @@ function listeProjets()
 {
     require_once("../Modules/connect.inc.php");
 
-    $requete="SELECT titreprojet,theme,descriptions,nomch,prenomch FROM projets p,chercheurs ch, appartenir a WHERE a.";
+    $requete="SELECT codeeq,titreprojet,theme,description,nomeq FROM projets p,equipeprojets e WHERE p.codeequ=e.codeeq ";
+    $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+    $num=pg_num_rows($result);
+
+    for ($i=0; $i<$num; $i++)
+    {
+        $row=pg_fetch_array($result);
+        echo "<b><u>Titre projet</u> : </b>".$row["titreprojet"]."<br>";
+        echo "<b><u>Theme projet</u> : </b>".$row["theme"]."<br>";
+        echo "<b><u>Description projet</u> : </b>".$row["description"]."<br>";
+        echo '<b><u>Nom equipe</u> : </b><a href="membreEquipe.php?codeeqAfficher='.$row["codeeq"].'"">'.$row["nomeq"]."</a><br><br>";
+    }
+}
+
+function membreEquipe($codeeq)
+{
+    require_once("../Modules/connect.inc.php");
+    $requete="SELECT nomeq FROM equipeprojets WHERE codeEq='".$codeeq."'";
+    $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+    $row=pg_fetch_array($result);
+    echo "<center><b><u>Equipe</u> : </b>".$row["nomeq"]."<br>";
+
+    $requete="SELECT nomch,prenomch FROM chercheurs c,projets p WHERE p.codeEqu='".$codeeq."' and loginchefprojet=loginch";
+    $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+    $row=pg_fetch_array($result);
+    echo "<b><u>Chef d'equipe</u> : </b>".strtoupper($row["nomch"])." ".ucfirst($row["prenomch"])."<br>";
+
+    $requete="SELECT titreprojet FROM projets WHERE codeEqu='".$codeeq."'";
+    $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+    $row=pg_fetch_array($result);
+    echo "<b><u>Projet mené</u> : </b>".$row["titreprojet"]."<br>";
+
+    $requete="SELECT c.loginch,nomch,prenomch FROM chercheurs c,appartenir a WHERE a.loginch=c.loginch AND a.codeEq='".$codeeq."'";
+    $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+    $num=pg_num_rows($result);
+
+    echo "<b><u>Membres equipe</u> : </b>";
+    for ($i=0; $i<$num; $i++)
+    {
+        $row=pg_fetch_array($result);
+        echo '<a href=infoChercheur.php?loginChAfficher='.$row["loginch"].'>'.strtoupper($row["nomch"])." ".ucfirst($row["prenomch"])."</a><br>";
+    }
 }
 
 function voirMesProjets ($login)
