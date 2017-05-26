@@ -1,4 +1,5 @@
 <?php
+// Sécurité en cas d'accès sans connexion, on redirige vers la page d'accueil
 require_once('../Modules/session_start.php');
 if (!isset($_SESSION["loginch"]))
   header("Location: /PCR/index.php");

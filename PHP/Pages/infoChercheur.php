@@ -20,13 +20,13 @@ require_once('../Modules/session_start.php');
           <center><br>Profil</center><legend></legend>
         </h1>
         <?php include '../Includes/fonctions.php';
-
+        // appel de la fonction qui affiche le profil du chercheur sélectionné
           monProfil($_GET["loginChAfficher"]);
         ?>
        </div>
       <?php include('../Includes/footer.php'); ?>
     </div> <!-- /container -->
-
+    <!-- Inclusion du fichier js.php -->
     <?php include('../Includes/js.php'); ?>
     
   </body>
