@@ -1,9 +1,12 @@
 <?php
 
+#Cette fonction d'afficher la liste des publications à un chercheur
 function afficherPublicationsChercheurs()
 {
+    #connexion à la BD
     require_once("../Modules/connect.inc.php");
 
+    #requete SQL ()
     $requete='SELECT titrepub, typepub, datepub,nomch,prenomch FROM publications p, publier pu, chercheurs ch WHERE p.codepub=pu.codepub AND pu.loginch=ch.loginch';
     $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
     $num=pg_num_rows($result);
@@ -22,9 +25,10 @@ function afficherPublicationsChercheurs()
     }
 }
 
-
+#Cette fonction permet d'afficher les publications de type article à un abonné
 function afficherPublications()
 {
+    #connexion à la BD
     require_once("../Modules/connect.inc.php");
 
     $requete="SELECT titrepub, typepub, datepub,nomch,prenomch FROM publications p, publier pu, chercheurs ch WHERE p.codepub=pu.codepub AND pu.loginch=ch.loginch AND typePub='article' ORDER BY datepub";
@@ -46,12 +50,15 @@ function afficherPublications()
 }
 
 
-
+#Cette fonction permet d'enregistrer une publication faite par un chercheur dans un fichier
 function ajouterPublication($titre,$type,$contenu,$date)
 {
+    #connexion à la BD
     require_once("../Modules/connect.inc.php");
 
+    #creation et ouverture du fichier contenant la publication
     $monfichier = fopen("../../Fichiers/".$titre.".html", 'a+');
+
 
     fputs($monfichier,"$contenu"); 
 
@@ -62,7 +69,9 @@ function ajouterPublication($titre,$type,$contenu,$date)
     $num=pg_num_rows($result);
 
     $num=$num+1;
+    //enregistrement de la publication
     $requete="INSERT INTO publications VALUES('".$num."','".$titre."','".$type."','".$date."')";
+    //enregistrement de l'auteur
     $requete1="INSERT INTO publier VALUES('".$num."','".$_SESSION["loginch"]."')";
     $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
     $result = pg_exec($dbconn,$requete1) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
@@ -71,6 +80,7 @@ function ajouterPublication($titre,$type,$contenu,$date)
 }
 
 
+#Cette fonction permet d'afficher une publication au complet et les commentaires faites dessus
 function afficherContenuPub($codepub)
 {
     require_once("../Modules/connect.inc.php");
@@ -85,6 +95,7 @@ function afficherContenuPub($codepub)
 
     $monfichier = fopen("../../Fichiers/".$titre.".html", 'a+');
     
+    //recuperation et affichage du contenu du fichier
     while (!feof($monfichier)) 
     {
         $line=fgets($monfichier);
@@ -94,6 +105,7 @@ function afficherContenuPub($codepub)
 
     echo "</center><br><br><h3>Commentaires</h3>";
 
+    //Affichage des commentaires
     $requete="SELECT contenucom,datecom,nomch,prenomch FROM commentaires c,chercheurs ch WHERE c.codepubch='".$codepub."' AND c.loginch=ch.loginch ";
     $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
     $requete1="SELECT contenucom,datecom,nomabo,prenomabo FROM commentaires c,abonnes a WHERE c.codePubAbo='".$codepub."' AND c.loginAbo=a.loginAbo ";
@@ -118,7 +130,7 @@ function afficherContenuPub($codepub)
     }
 }
 
-
+#Cette fonction permet d'enregistrer une commentaire faite sur une publication 
 function commenterPublication ($login,$contenu,$datepub,$codepub)
 {
     require_once("../Modules/connect.inc.php");
@@ -129,23 +141,28 @@ function commenterPublication ($login,$contenu,$datepub,$codepub)
 
     $num=$num+1;
 
+    //si lutilisateur est un chercheur
     if ((substr($login, 0, 2))==='ch')
     {
+        //enregistrement du commentaire
         $requete="INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubCh, loginCh) VALUES ('".$num."','".$contenu."','".$datepub."',".$codepub.",'".$login."')";
         $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
         header("location: contenuPub.php?codepubAfficher=".$codepub);
     }
+    //si cest un abbonné
     else
     {
+        //enregistrement du commentaire
         $requete="INSERT INTO commentaires (codeCom, contenuCom, dateCom, codePubAbo,loginAbo)  VALUES ('".$num."','".$contenu."','".$datepub."',".$codepub.",'".$login."')";
         $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
         header("location: contenuPub.php?codepubAfficher=".$codepub);
     }
 }
 
+#Cette fonction permet l'authentification d'un chercheur et d'un abonné
 function connexion ($login,$password)
 {
-        //si l'utilisateur est un chercheur
+    //si l'utilisateur est un chercheur
     if ((substr($login, 0, 2))==='ch')
     {
         require_once("../Modules/connect.inc.php");
@@ -198,30 +215,33 @@ function connexion ($login,$password)
 }
 
 
+#Cette fonction permet la creation d'un compte à un chercheur
 function inscription_chercheurs ($nom,$prenom,$mail,$tel,$password,$actif)
 {
-		//connexion et selection de la base de donnees
-  require_once("../Modules/connect.inc.php");
+    //connexion et selection de la base de donnees
+    require_once("../Modules/connect.inc.php");
 
-  $requete='SELECT * FROM chercheurs';
-  $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
-  $num=pg_num_rows($result);
-  $num=$num+1;
+    $requete='SELECT * FROM chercheurs';
+    $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+    $num=pg_num_rows($result);
+    $num=$num+1;
 
-  $login="ch".substr($nom, 0, 1).substr($prenom, 0, 1).$num;
-  $password=md5($password);
+    //creation du login
+    $login="ch".substr($nom, 0, 1).substr($prenom, 0, 1).$num;
+    $password=md5($password);
 
-  $requete1="INSERT INTO chercheurs VALUES ('".$login."','".$password."','".$nom."','".$prenom."','".$mail."','".$tel."','".$actif."')";
-  pg_exec($dbconn,$requete1) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+    //ajout des information dans la BD
+    $requete1="INSERT INTO chercheurs VALUES ('".$login."','".$password."','".$nom."','".$prenom."','".$mail."','".$tel."','".$actif."')";
+    pg_exec($dbconn,$requete1) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
 
-  pg_close($dbconn);
-  return $login;
+    pg_close($dbconn);
+    return $login;
 }
 
-
+#Cette fonction permet la creation d'un compte à un abonné
 function inscription_abonnes($nom,$prenom,$mail,$tel,$password,$actif)
 {
-		//connexion et selection de la base de donnees
+    //connexion et selection de la base de donnees
   require_once("../Modules/connect.inc.php");
 
   $requete='SELECT * FROM abonnes';
@@ -229,6 +249,7 @@ function inscription_abonnes($nom,$prenom,$mail,$tel,$password,$actif)
   $num=pg_num_rows($result);
   $num=$num+1;
 
+  //creation du login
   $login="ab".substr($nom, 0, 1).substr($prenom, 0, 1).$num;
   $password=md5($password);
 
@@ -240,6 +261,7 @@ function inscription_abonnes($nom,$prenom,$mail,$tel,$password,$actif)
 }
 
 
+#Cette fonction permet de mettre à jour le mot de passe dun chercheur/abonné dans la BD lorsque celui ci est modifié
 function nouveau_motdePasse ($login,$password)
 {
     if ((substr($login, 0, 2))==='ch')
@@ -271,6 +293,7 @@ function nouveau_motdePasse ($login,$password)
     }
 }
 
+#Cette fonction permet d'afficher l'annuaire des chercheur de la plateforme (nom-prenom-numéro-adresse mail)
 function annuaire ()
 {
     require_once("../Modules/connect.inc.php");
@@ -300,12 +323,7 @@ function annuaire ()
     pg_close($dbconn); 
 }
 
-function recherche() 
-{
-
-    require_once("../Modules/connect.inc.php");
-}
-
+#Cette fonction permet d'afficher les informations d'un chercheur (nom prenom telephone email equipes auquels il apprtient) ou d'un abonné  (nom prenom email)
 function monProfil($login)
 {
     require_once("../Modules/connect.inc.php");
@@ -317,7 +335,7 @@ function monProfil($login)
         $row=pg_fetch_array($result);
         echo "<center>";
         echo "<b><h3>".strtoupper($row["nomch"])." ".ucfirst($row["prenomch"])."</b></h3>";
-        echo "<h3>Coordonnes</h3>";
+        echo "<h3>Coordonnées</h3>";
         echo "<b><u>Email</u> : </b>".$row["mailch"];
         echo "<br><b><u>Téléphone</u> : </b>".$row["telch"];
 
@@ -334,19 +352,19 @@ function monProfil($login)
    }
    else
    {
-    $requete = "SELECT nomabo, prenomabo, mailabo FROM abonnes WHERE loginabo= '".$login."'";
-    $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
-    $row=pg_fetch_array($result);
-    echo "<center>";
-    echo "<h4>".strtoupper($row["nomabo"])." ".ucfirst($row["prenomabo"])."</h4>";
-    echo "Coordonnes<br>";
-    echo "Email : ".$row["mailabo"];
-    echo "</center>";
+        $requete = "SELECT nomabo, prenomabo, mailabo FROM abonnes WHERE loginabo= '".$login."'";
+        $result = pg_exec($dbconn,$requete) or die('Erreur SQL !<br />'.$sql.'<br />'.pg_last_error());
+        $row=pg_fetch_array($result);
+        echo "<center>";
+        echo "<h4>".strtoupper($row["nomabo"])." ".ucfirst($row["prenomabo"])."</h4>";
+        echo "Coordonnes<br>";
+        echo "Email : ".$row["mailabo"];
+        echo "</center>";
+    }
 }
 
 
-}
-
+#Cette fonction permet d'afficher la liste des chercheurs lors de la creation d'une équipe 
 function selectionEquipe()
 {
     include("../Modules/connect.inc.php");
@@ -366,6 +384,7 @@ function selectionEquipe()
     return $chercheurs;
 }
 
+#cette fonction permet d'enregistrer une nouvelle equipe dans la BD
 function creerEquipe($nom)
 {
     require_once("../Modules/connect.inc.php");
@@ -382,7 +401,7 @@ function creerEquipe($nom)
     return $num;
 }
 
-
+#cette fonction permet d'ajouter un chercheur à une équipe
 function ajoutMembreEquipe($loginch, $codeEq)
 {
     include("../Modules/connect.inc.php");
@@ -393,6 +412,7 @@ function ajoutMembreEquipe($loginch, $codeEq)
     pg_close($dbconn);
 }
 
+#cette fonction permet d'enregistrer les informations d'un nouveau projet
 function creerProjet($login,$titre,$theme,$budget,$date,$description,$codeEq)
 {
     include("../Modules/connect.inc.php");
@@ -409,6 +429,7 @@ function creerProjet($login,$titre,$theme,$budget,$date,$description,$codeEq)
     pg_close($dbconn);
 }
 
+#cette fonction permmet d'afficher la liste des projets traites à un chercheur
 function listeProjets()
 {
     require_once("../Modules/connect.inc.php");
@@ -427,6 +448,8 @@ function listeProjets()
     }
 }
 
+
+#cette fonction permet d'afficher les informations d'une équipe (nom de l'equipe les membres de l'equipe le chef de l'equipe et les projets mené par cette equipe )
 function membreEquipe($codeeq)
 {
     require_once("../Modules/connect.inc.php");
@@ -457,6 +480,7 @@ function membreEquipe($codeeq)
     }
 }
 
+#cette fonction permet d'afficher à un chercheur la liste des projets sur lesquels il travaille
 function voirMesProjets ($login)
 {
     require_once("../Modules/connect.inc.php");
@@ -476,6 +500,8 @@ function voirMesProjets ($login)
 }
 
 
+#cette fonction permet d'afficher les informations d'un projet 
+# (nom du projet theme du projet nom de lequipe qui travaille sur le projet nom des membres de l'equipe... )
 function detailProjets($login,$codeprojet)
 {
     require_once("../Modules/connect.inc.php");
@@ -521,6 +547,7 @@ function detailProjets($login,$codeprojet)
     pg_close($dbconn);
 }
 
+#cette fonction permet d'
 function ajoutFichier($index,$tmpName,$taille,$error,$destination,$maxsize=FALSE)
 {
    //Test1: fichier correctement uploadé
