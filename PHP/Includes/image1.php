@@ -1,4 +1,5 @@
 <?php
+// Création d'un image contenant le texte "Bienvenue sur le site PCR" dans un cadre bleu clair
 header("Content-type: image/png");
 $image = imagecreate(290,50);
 
