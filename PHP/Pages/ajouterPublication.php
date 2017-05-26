@@ -18,21 +18,23 @@
           <center> <br>Ajouter Publication </center>
         </h1><legend></legend>
 
+        <!-- Affichage formulaire pour la creation d'une publication -->
         <form action="traitement.php" method="post">
-         <label>Type publication  </label>
-         <select name="typepub">
-          <option value=rapport>rapport</option>
-          <option value=memoire>mémoire</option>
-          <option value=article>article</option>
-          <option value=compte-rendu>compte-rendu</option>
-        </select>
-        <br>
-        <label>Titre</label><br>
-        <input type="text" name="titrepub"><br>
-        <label>Contenu</label><br>
-        <textarea name="contenupub" rows="50" cols="90"></textarea><br><br>
-        <input type="submit" value="Enregistrer" name="enregistrer">
-      </form >
+          <label>Type publication  </label>
+          <select name="typepub">
+            <option value=rapport>rapport</option>
+            <option value=memoire>mémoire</option>
+            <option value=article>article</option>
+            <option value=compte-rendu>compte-rendu</option>
+          </select>
+          <br>
+          <label>Titre</label><br>
+          <input type="text" name="titrepub"><br>
+          <label>Contenu</label><br>
+          <textarea name="contenupub" rows="50" cols="90"></textarea><br><br>
+          <input type="submit" value="Enregistrer" name="enregistrer">
+        </form >
+
     </div>
   </center>
   <?php include('../Includes/footer.php'); ?>

@@ -18,7 +18,7 @@
           <center> <br>Compte utilisateur</center>
         </h1>
 
-
+        <!-- Formulaire de connexion -->
         <form action="traitement.php" method="post">
           <fieldset>
             <legend></legend>
@@ -36,6 +36,7 @@
           </fieldset>
         </form>
 
+        <!-- affichage d'un msg derreur si l'identificatition echou -->
         <?php 
         if (isset($_GET['msgErreur']))  
         {
