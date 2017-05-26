@@ -19,6 +19,7 @@ if (!isset($_SESSION["loginch"]))
 
       <div id="contenu">
         <?php include '../Includes/fonctions.php';
+          //Affichage des projets sur lesquels le chercheur connecté travaille
           voirMesProjets ($_SESSION["loginch"]);
         ?>
        </div>

@@ -19,6 +19,7 @@
           <center> Compte utilisateur</center>
         </h2>
 
+        <!-- Formulaire pour le changement du mot de passe -->
         <form action="traitement.php" method="post">
           <fieldset>
             <legend>Nouveau mot de passe</legend>

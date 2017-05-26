@@ -14,16 +14,23 @@
       <!-- Static navbar -->
       <?php include('../Includes/nav.php'); ?>
       <div id="contenu">
-        <h3><center> <br>Votre login : 
-        <?php
-        if(isset($_SESSION["loginch"])) {
-          echo $_SESSION["loginch"]; 
-        }
-        else {
-          echo $_SESSION["loginab"];
-        }
-        ?>
-        </center> </h3>
+        <h3>
+          <center> 
+          <br>
+          Votre login : 
+          <?php
+          //affichage du login
+          if(isset($_SESSION["loginch"])) 
+          {
+            echo $_SESSION["loginch"]; 
+          }
+          else 
+          {
+            echo $_SESSION["loginab"];
+          }
+          ?>
+          </center> 
+        </h3>
       
       </div>
     <?php include('../Includes/footer.php'); ?>

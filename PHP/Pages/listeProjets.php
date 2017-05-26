@@ -22,6 +22,7 @@ if (!isset($_SESSION["loginch"]))
           <center><br>Liste des Projets</center><legend></legend>
         </h1>
         <?php include '../Includes/fonctions.php';
+          //affichage de la liste de tous les projets
           listeProjets();
         ?>
        </div>

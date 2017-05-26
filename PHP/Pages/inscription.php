@@ -17,7 +17,7 @@
           <center> <br>Inscription </center>
         </h1>
 
-
+        <!-- formulaire d'inscription  -->
         <form action="traitement.php" method="post">
           <fieldset>
             <legend></legend>

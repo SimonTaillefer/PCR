@@ -18,16 +18,18 @@
           		<center><br>  Publication contenu</center><legend></legend>
         	</h1>
 
-          <?php include '../Includes/fonctions.php';            
+          <?php include '../Includes/fonctions.php'; 
+            //affichage du contenu de la publication choisie           
             afficherContenuPub($_GET["codepubAfficher"]);
          
 
-          echo '<form action="traitement.php" method="post">';
-            echo "<br>";
-              echo '<textarea name="contenucommentaire" rows="6" cols="100"></textarea><br><br>';
-              echo '<input type="hidden" value="'.$_GET["codepubAfficher"].'" name="codepubAfficher"> ';
-              echo '<input type="submit" value="Envoyer" name="ajouterCommentaire">';
-          echo '</form >';
+            //affichage d'un formulaire pour le commentaire
+            echo '<form action="traitement.php" method="post">';
+              echo "<br>";
+                echo '<textarea name="contenucommentaire" rows="6" cols="100"></textarea><br><br>';
+                echo '<input type="hidden" value="'.$_GET["codepubAfficher"].'" name="codepubAfficher"> ';
+                echo '<input type="submit" value="Envoyer" name="ajouterCommentaire">';
+            echo '</form >';
           ?>
         </div>
     

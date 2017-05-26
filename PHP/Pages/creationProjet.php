@@ -30,13 +30,16 @@ if (!isset($_SESSION["loginch"]))
 
         $chercheurs = array (array("name" => "Chercheurs", "align" => "center", "width" => "40px"));         
 
-        if(isset($_POST["submit"])) {
+        if(isset($_POST["submit"])) 
+        {
 
-          if(isset($_POST['nom_equipe']) && isset($_POST['titre_projet']) && isset($_POST['theme_projet'])) {
+          if(isset($_POST['nom_equipe']) && isset($_POST['titre_projet']) && isset($_POST['theme_projet'])) 
+          {
 
             $numEq = creerEquipe($_POST['nom_equipe']);
 
-            for($i = 0; $i < sizeof($_POST[$nom]); $i++) {
+            for($i = 0; $i < sizeof($_POST[$nom]); $i++) 
+            {
               ajoutMembreEquipe($_POST[$nom][$i], $numEq);
             }
 
@@ -54,11 +57,13 @@ if (!isset($_SESSION["loginch"]))
 
             //header('Location: /PCR/PHP/Pages/mesProjets.php');
           }
-          else {
+          else 
+          {
             header('Location: /PCR/PHP/Pages/mesProjets.php');
           }
         }
         ?>
+        <!-- formulaire de creaation d'un projet-->
         <div class="div_cadre">
           <form name="form_select" method="post" action="">
             <fieldset>

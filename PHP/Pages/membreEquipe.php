@@ -22,6 +22,7 @@ if (!isset($_SESSION["loginch"]))
           <center><br>Membre equipe</center><legend></legend>
         </h1>
         <?php include '../Includes/fonctions.php';
+          //affichage des infos d'une équipe
           membreEquipe($_GET["codeeqAfficher"]);
         ?>
        </div>

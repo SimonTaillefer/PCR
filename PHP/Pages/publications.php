@@ -19,14 +19,15 @@
         </h1>
         <legend></legend>
         <?php include '../Includes/fonctions.php';
+        //affichage des publications 
         if (isset($_SESSION['loginch'])) 
         {
          afficherPublicationsChercheurs();
-       }
-       else
-       {
-         afficherPublications();
-       }
+        }
+        else
+        {
+          afficherPublications();
+        }
        ?>
      </center>
    </div>

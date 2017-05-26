@@ -19,6 +19,7 @@
         </h1>
 
          <?php include '../Includes/fonctions.php';
+            //affichage des informations du l'utilisateur connecté
            if (isset($_SESSION['loginch'])) 
            {
              monProfil($_SESSION["loginch"]);
