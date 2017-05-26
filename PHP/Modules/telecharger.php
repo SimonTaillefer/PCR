@@ -1,5 +1,5 @@
 <?php
-
+// Forçage du téléchargement d'un fichier
 $fichier = $_GET['situation']; 
 $fichier_taille = filesize($fichier);
 header("Content-disposition: attachment; filename=$fichier");

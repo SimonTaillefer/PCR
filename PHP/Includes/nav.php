@@ -1,3 +1,4 @@
+<!-- Navigateur avec l'utilisation de bootstrap -->
 <nav class="navbar navbar-default">
 	<div class="container-fluid">
 		<div class="navbar-header">
@@ -12,6 +13,7 @@
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
 				<?php 
+				// Si c'est un chercheur, on va afficher les liste déroulantes des projets sinon rien
 				if (!isset($_SESSION["loginch"]))
 				{
 
@@ -34,6 +36,7 @@
 					<a href="/PCR/PHP/Pages/annuaire.php"><span class="glyphicon glyphicon-list-alt"></span> Annuaire</a>
 				</li>
 				<?php 
+				// Si c'est un chercheur, on va afficher la liste déroulante des publications (créer + voir / commenter) sinon juste "voir"
 				if (!isset($_SESSION["loginch"]))
 				{
 					echo "<li>";
@@ -54,6 +57,7 @@
 				?>				
 				<li>
 					<?php 
+					// Si un abonné ou chercheur est connecté, on affiche "déconnexion", sinon "connexion" + formulaire
 					if ((!isset($_SESSION['loginch'])) && (!isset($_SESSION['loginab'])))
 						echo '<a href="/PCR/PHP/Pages/connexion.php"><span class="glyphicon glyphicon-log-in"></span> Connexion</a>';
 					else
@@ -61,6 +65,7 @@
 					?>
 				</li>
 				<?php 
+				// Si personne n'est connecté, on affiche "inscription" sinon "mon profil"
 				if((!isset($_SESSION['loginch'])) && (!isset($_SESSION['loginab'])))
 				{
 					echo "<li>";

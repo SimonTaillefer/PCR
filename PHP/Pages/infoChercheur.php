@@ -24,6 +24,7 @@ require_once('../Modules/session_start.php');
           monProfil($_GET["loginChAfficher"]);
         ?>
        </div>
+       <!-- Inclusion du footer -->
       <?php include('../Includes/footer.php'); ?>
     </div> <!-- /container -->
     <!-- Inclusion du fichier js.php -->
